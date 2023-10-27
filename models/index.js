@@ -1,4 +1,4 @@
-// importing models
+// Importing models
 const Character = require('./Character')
 const Class = require('./Class')
 const Race = require('./Race')
@@ -10,6 +10,14 @@ const Spell = require ('./Spell')
 const CharacterWeapon = require('./CharacterWeapon')
 const Weapon = require('./Weapon')
 
+// Relationships
+Character.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+User.hasMany(Character, {
+    
+})
+// Exporting
 module.exports = {
     Character,
     Class,
