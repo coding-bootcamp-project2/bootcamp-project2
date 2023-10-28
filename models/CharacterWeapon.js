@@ -5,35 +5,35 @@ const sequelize = require("../config/connection.js");
 class CharacterWeapon extends Model {}
 
 CharacterWeapon.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-          },
-        character_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'character',
-                key: 'id'
-            }
-        },
-        weapon_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'weapon',
-                key: 'id'
-            }
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: "character_weapon",
-      }
-)
+    character_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "character",
+        key: "id",
+      },
+    },
+    weapon_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "weapon",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "character_weapon",
+  }
+);
 
-module.exports = CharacterWeapon
+module.exports = CharacterWeapon;
