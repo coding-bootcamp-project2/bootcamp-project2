@@ -18,21 +18,21 @@ Character.init(
           },
         user_id: {
             type: DataTypes.INTEGER,
-            refernces: {
+            references: {
                 model: 'user',
                 key: 'id',
             }
           },
         class_id: {
             type: DataTypes.INTEGER,
-            refernces: {
+            references: {
                 model: 'class',
                 key: 'id',
             }
         },
         race_id: {
             type: DataTypes.INTEGER,
-            refernces: {
+            references: {
                 model: 'race',
                 key: 'id',
             }
@@ -41,16 +41,16 @@ Character.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        skill: {
+        skill_id: {
             type: DataTypes.INTEGER,
-            refernces: {
+            references: {
                 model: 'skill',
                 key: 'id',
             }
         },
-        armor: {
+        armor_id: {
             type: DataTypes.INTEGER,
-            refernces: {
+            references: {
                 model: 'armor',
                 key: 'id',
             }
@@ -82,6 +82,20 @@ Character.init(
         charisma: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        charcter_spell_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'characterspell',
+                key: 'id',
+            }
+        },
+        charcter_weapon_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'characterweapon',
+                key: 'id',
+            }
         },
         created_at: {
             type: DataTypes.DATE,

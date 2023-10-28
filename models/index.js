@@ -18,46 +18,46 @@ User.hasMany(Character, {
     foreignKey: 'user_id'
 })
 Class.belongsTo(Character, {
-    
+    foreignKey: 'class_id'
 })
 Character.hasOne(Class, {
-
+    foreignKey: 'class_id'
 })
 Race.belongsTo(Character, {
-
+    foreignKey: 'race_id'
 })
 Character.hasOne(Race, {
-
+    foreignKey: 'race_id'
 })
 Skill.belongsTo(Character, {
-
+    foreignKey: 'skill_id'
 })
 Character.hasOne(Skill, {
-
+    foreignKey: 'skill_id'
 })
 Armor.belongsTo(Character, {
-
+    foreignKey: 'armor_id'
 })
 Character.hasOne(Armor, {
-
+    foreignKey: 'armor_id'
 })
 Character.hasMany(CharacterSpell, {
-
+    foreignKey: 'charcter_spell_id'
 })
 CharacterSpell.hasMany(Spell, {
-
+    foreignKey: 'spell_id'
 })
 Spell.belongsTo(CharacterSpell, {
-
+    foreignKey: 'spell_id'
 })
 Character.hasMany(CharacterWeapon, {
-
+    foreignKey: 'charcter_weapon_id'
 })
 CharacterWeapon.hasMany(Weapon, {
-
+    foreignKey: 'weapon_id'
 })
 Weapon.belongsTo(CharacterWeapon, {
-
+    foreignKey: 'weapon_id'
 })
 // Exporting
 module.exports = {
