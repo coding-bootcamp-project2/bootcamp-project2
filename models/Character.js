@@ -83,29 +83,6 @@ Character.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    // I dont think we need character_spell_id and character_weapon_id here.
-    charcter_spell_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "characterspell",
-        key: "id",
-      },
-    },
-    charcter_weapon_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "characterweapon",
-        key: "id",
-      },
-    },
-    // if we want date stamps, we can just set the timestamps below to true.
-    created_at: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
-    updated_at: {
-      type: DataTypes.DATE,
-    },
   },
   {
     sequelize,

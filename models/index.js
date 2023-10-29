@@ -41,31 +41,23 @@ Armor.belongsTo(Character, {
 Character.hasOne(Armor, {
   foreignKey: "armor_id",
 });
-///////////////////////////////////////////
 // I believe we need to use belongsToMany here to define the relationshop.
 // Spell.belongsToMany(Character, {through: CharacterSpell})
 // Character.belongsToMany(Spell, {through: CharacterSpell})
 // Weapon.belongsToMany(Character, {through: CharacterWeapon})
 // Character.belongsToMany(Weapon, {through: CharacterWeapon})
-Character.hasMany(CharacterSpell, {
-  foreignKey: "charcter_spell_id",
-});
-CharacterSpell.hasMany(Spell, {
-  foreignKey: "spell_id",
-});
-Spell.belongsTo(CharacterSpell, {
-  foreignKey: "spell_id",
-});
-Character.hasMany(CharacterWeapon, {
-  foreignKey: "charcter_weapon_id",
-});
-CharacterWeapon.hasMany(Weapon, {
-  foreignKey: "weapon_id",
-});
-Weapon.belongsTo(CharacterWeapon, {
-  foreignKey: "weapon_id",
-});
-///////////////////////////////////////
+Spell.belongsToMany(Character, {
+  through: CharacterSpell
+})
+Character.belongsToMany(Spell, {
+  through: CharacterSpell
+})
+Weapon.belongsToMany(Character, {
+  through: CharacterWeapon
+})
+Character.belongsToMany(Weapon, {
+  through: CharacterWeapon
+})
 
 // Exporting
 module.exports = {

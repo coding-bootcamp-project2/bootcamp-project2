@@ -12,7 +12,10 @@ Spell.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // add a name column
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
