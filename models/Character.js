@@ -55,34 +55,6 @@ Character.init(
         key: "id",
       },
     },
-    hit_points: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    strength: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    dexterity: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    constitution: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    intelligence: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    wisdom: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    charisma: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
   },
   {
     sequelize,
