@@ -7,7 +7,7 @@ const Race = require("./Race");
 const User = require("./User");
 // const CharacterSpell = require("./CharacterSpell");
 const Spell = require("./Spell");
-// const CharacterWeapon = require("./CharacterWeapon");
+const CharacterWeapon = require("./CharacterWeapon");
 const Weapon = require("./Weapon");
 
 // Relationships
@@ -41,11 +41,6 @@ Character.hasOne(Race, {
 // Character.hasOne(Armor, {
 //   foreignKey: "armor_id",
 // });
-// I believe we need to use belongsToMany here to define the relationshop.
-// Spell.belongsToMany(Character, {through: CharacterSpell})
-// Character.belongsToMany(Spell, {through: CharacterSpell})
-// Weapon.belongsToMany(Character, {through: CharacterWeapon})
-// Character.belongsToMany(Weapon, {through: CharacterWeapon})
 Spell.belongsToMany(Character, {
   through: CharacterSpell
 })
