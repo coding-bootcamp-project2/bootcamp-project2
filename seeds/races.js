@@ -33,6 +33,6 @@ const races = [
       },
   ];
   
-  const raceData = () => db.bulkCreate(races);
+  const raceData = () => dnd_character_db.bulkCreate(races);
   
   module.exports = raceData;

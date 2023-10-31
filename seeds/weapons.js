@@ -66,6 +66,6 @@ const weaponData = [
   },
 ]
 
-const weapons = () => db.bulkCreate(weaponData);
+const weapons = () => dnd_character_db.bulkCreate(weaponData);
 
 module.exports = weapons;

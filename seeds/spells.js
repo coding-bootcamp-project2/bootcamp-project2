@@ -53,6 +53,6 @@ const spells = [
       },
   ];
   
-  const spellData = () => db.bulkCreate(spells);
+  const spellData = () => dnd_character_db.bulkCreate(spells);
   
   module.exports = spellData;

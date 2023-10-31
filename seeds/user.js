@@ -8,6 +8,6 @@ const userData = [
   },
 ];
 
-const userLogin = () => db.bulkCreate(userData);
+const userLogin = () => dnd_character_db.bulkCreate(userData);
 
 module.exports = userLogin;

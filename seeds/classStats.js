@@ -104,6 +104,6 @@ const classData = [
   },
 ];
 
-const classes = () => db.bulkCreate(classData);
+const classes = () => dnd_character_db.bulkCreate(classData);
 
 module.exports = classes;
