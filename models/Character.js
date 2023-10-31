@@ -41,20 +41,20 @@ Character.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    skill_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "skill",
-        key: "id",
-      },
-    },
-    armor_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "armor",
-        key: "id",
-      },
-    },
+    // skill_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "skill",
+    //     key: "id",
+    //   },
+    // },
+    // armor_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "armor",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
