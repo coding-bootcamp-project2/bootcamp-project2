@@ -2,6 +2,8 @@ const { ClassStats } = require('../models'); // placeholder route
 
 const classData = [
   {
+    id: 1,
+    description: 'A fierce warrior of primitive background who can enter a battle rage',
     className: 'barbarian',
     strength: 16,
     dexterity: 14,
@@ -11,6 +13,8 @@ const classData = [
     charisma: 8,
   },
   {
+    id: 2,
+    description: 'An inspiring magician whose power echoes the music of creation',
     className: 'bard',
     strength: 8,
     dexterity: 16,
@@ -19,6 +23,8 @@ const classData = [
     wisdom: 12,
     charisma: 16,
   },{
+    id: 3,
+    description: 'A priestly champion who wields divine magic in service of a higher power',
     className: 'cleric',
     strength: 16,
     dexterity: 8,
@@ -27,6 +33,8 @@ const classData = [
     wisdom: 16,
     charisma: 12,
   },{
+    id: 4,
+    description: 'A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms',
     className: 'druid',
     strength: 8,
     dexterity: 14,
@@ -35,6 +43,8 @@ const classData = [
     wisdom: 16,
     charisma: 12,
   },{
+    id: 5,
+    description: 'A holy warrior bound to a sacred oath',
     className: 'paladin',
     strength: 16,
     dexterity: 8,
@@ -43,6 +53,8 @@ const classData = [
     wisdom: 12,
     charisma: 16,
   },{
+    id: 6,
+    description: 'A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization',
     className: 'ranger',
     strength: 8,
     dexterity: 16,
@@ -51,6 +63,8 @@ const classData = [
     wisdom: 16,
     charisma: 12,
   },{
+    id: 7,
+    description: 'A spellcaster who draws on inherent magic from a gift or bloodline',
     className: 'sorcerer',
     strength: 8,
     dexterity: 16,
@@ -59,6 +73,8 @@ const classData = [
     wisdom: 12,
     charisma: 14,
   },{
+    id: 8,
+    description: 'A wielder of magic that is derived from a bargain with an extraplanar entity',
     className: 'warlock',
     strength: 8,
     dexterity: 16,
@@ -67,6 +83,8 @@ const classData = [
     wisdom: 12,
     charisma: 16,
   },{
+    id: 9,
+    description: 'A scholarly magic-user capable of manipulating the structures of reality',
     className: 'wizard',
     strength: 8,
     dexterity: 16,
