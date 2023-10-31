@@ -3,6 +3,7 @@ const { ClassStats } = require('../models'); // placeholder route
 const classData = [
   {
     id: 1,
+    hit_points: 14,
     description: 'A fierce warrior of primitive background who can enter a battle rage',
     name: 'barbarian',
     strength: 16,
@@ -14,6 +15,7 @@ const classData = [
   },
   {
     id: 2,
+    hit_points: 8,
     description: 'An inspiring magician whose power echoes the music of creation',
     name: 'bard',
     strength: 8,
@@ -24,6 +26,7 @@ const classData = [
     charisma: 16,
   },{
     id: 3,
+    hit_points: 10,
     description: 'A priestly champion who wields divine magic in service of a higher power',
     name: 'cleric',
     strength: 16,
@@ -34,6 +37,7 @@ const classData = [
     charisma: 12,
   },{
     id: 4,
+    hit_points: 8,
     description: 'A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms',
     name: 'druid',
     strength: 8,
@@ -44,6 +48,7 @@ const classData = [
     charisma: 12,
   },{
     id: 5,
+    hit_points: 12,
     description: 'A holy warrior bound to a sacred oath',
     name: 'paladin',
     strength: 16,
@@ -54,6 +59,7 @@ const classData = [
     charisma: 16,
   },{
     id: 6,
+    hit_points: 12,
     description: 'A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization',
     name: 'ranger',
     strength: 8,
@@ -64,6 +70,7 @@ const classData = [
     charisma: 12,
   },{
     id: 7,
+    hit_points: 8,
     description: 'A spellcaster who draws on inherent magic from a gift or bloodline',
     name: 'sorcerer',
     strength: 8,
@@ -74,6 +81,7 @@ const classData = [
     charisma: 14,
   },{
     id: 8,
+    hit_points: 7,
     description: 'A wielder of magic that is derived from a bargain with an extraplanar entity',
     name: 'warlock',
     strength: 8,
@@ -84,6 +92,7 @@ const classData = [
     charisma: 16,
   },{
     id: 9,
+    hit_points: 8,
     description: 'A scholarly magic-user capable of manipulating the structures of reality',
     name: 'wizard',
     strength: 8,

@@ -30,6 +30,12 @@ const seedAll = async () => {
   await character();
   console.log('\n----- CHARACTER SEEDED -----\n');
 
+  await character_spell();
+  console.log('\n----- CHARACTER SEEDED -----\n');
+
+  await character_weapon();
+  console.log('\n----- CHARACTER SEEDED -----\n');
+
   process.exit(0);
 };
 
