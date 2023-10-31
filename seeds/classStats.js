@@ -4,7 +4,7 @@ const classData = [
   {
     id: 1,
     description: 'A fierce warrior of primitive background who can enter a battle rage',
-    className: 'barbarian',
+    name: 'barbarian',
     strength: 16,
     dexterity: 14,
     constitution: 16,
@@ -15,7 +15,7 @@ const classData = [
   {
     id: 2,
     description: 'An inspiring magician whose power echoes the music of creation',
-    className: 'bard',
+    name: 'bard',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -25,7 +25,7 @@ const classData = [
   },{
     id: 3,
     description: 'A priestly champion who wields divine magic in service of a higher power',
-    className: 'cleric',
+    name: 'cleric',
     strength: 16,
     dexterity: 8,
     constitution: 14,
@@ -35,7 +35,7 @@ const classData = [
   },{
     id: 4,
     description: 'A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms',
-    className: 'druid',
+    name: 'druid',
     strength: 8,
     dexterity: 14,
     constitution: 16,
@@ -45,7 +45,7 @@ const classData = [
   },{
     id: 5,
     description: 'A holy warrior bound to a sacred oath',
-    className: 'paladin',
+    name: 'paladin',
     strength: 16,
     dexterity: 8,
     constitution: 14,
@@ -55,7 +55,7 @@ const classData = [
   },{
     id: 6,
     description: 'A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization',
-    className: 'ranger',
+    name: 'ranger',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -65,7 +65,7 @@ const classData = [
   },{
     id: 7,
     description: 'A spellcaster who draws on inherent magic from a gift or bloodline',
-    className: 'sorcerer',
+    name: 'sorcerer',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -75,7 +75,7 @@ const classData = [
   },{
     id: 8,
     description: 'A wielder of magic that is derived from a bargain with an extraplanar entity',
-    className: 'warlock',
+    name: 'warlock',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -85,7 +85,7 @@ const classData = [
   },{
     id: 9,
     description: 'A scholarly magic-user capable of manipulating the structures of reality',
-    className: 'wizard',
+    name: 'wizard',
     strength: 8,
     dexterity: 16,
     constitution: 14,

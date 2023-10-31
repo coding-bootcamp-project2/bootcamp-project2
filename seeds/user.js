@@ -10,4 +10,4 @@ const userData = [
 
 const userLogin = () => db.bulkCreate(userData);
 
-module.exports = User;
+module.exports = userLogin;
