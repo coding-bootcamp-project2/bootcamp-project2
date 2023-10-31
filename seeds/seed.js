@@ -1,7 +1,7 @@
-const classes = require('./classStats');
-const races = require('./races');
-const spells = require('./spells');
-const weapons = require('./weapons');
+const classes = require('./class');
+const races = require('./race');
+const spells = require('./spell');
+const weapons = require('./weapon');
 const user = require('./user');
 const character = require('./character');
 
@@ -12,7 +12,7 @@ const seedAll = async () => {
 
   console.log('\n----- DATABASE SYNCED -----\n');
 
-  await user ();
+  await user();
   console.log('\n----- USER DATA SEEDED -----\n');
 
   await classes();
@@ -27,8 +27,8 @@ const seedAll = async () => {
   await spells();
   console.log('\n----- SPELLS SEEDED -----\n');
 
-  await character();
-  console.log('\n----- CHARACTER SEEDED -----\n');
+  // await character();
+  // console.log('\n----- CHARACTER SEEDED -----\n');
 
   process.exit(0);
 };

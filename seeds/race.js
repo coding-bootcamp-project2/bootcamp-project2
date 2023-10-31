@@ -1,4 +1,4 @@
-const { Races } = require('../models'); // placeholder route
+const { Race } = require('../models'); // placeholder route
 
 const races = [
     {
@@ -33,6 +33,6 @@ const races = [
       },
   ];
   
-  const raceData = () => db.bulkCreate(races);
+  const raceData = () => Race.bulkCreate(races);
   
   module.exports = raceData;

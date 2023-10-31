@@ -10,6 +10,6 @@ const characterData = [
     },
 ];
 
-const character = () => db.bulkCreate(Character);
+const character = () => Character.bulkCreate(Character);
 
 module.exports = character;

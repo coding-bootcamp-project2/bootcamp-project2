@@ -8,6 +8,6 @@ const userData = [
   },
 ];
 
-const userLogin = () => db.bulkCreate(userData);
+const userLogin = () => User.bulkCreate(userData);
 
-module.exports = User;
+module.exports = userLogin;

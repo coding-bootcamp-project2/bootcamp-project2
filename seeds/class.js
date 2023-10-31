@@ -1,10 +1,11 @@
-const { ClassStats } = require('../models'); // placeholder route
+const { Class } = require('../models'); // placeholder route
 
 const classData = [
   {
     id: 1,
     description: 'A fierce warrior of primitive background who can enter a battle rage',
-    className: 'barbarian',
+    hit_points: 20,
+    name: 'barbarian',
     strength: 16,
     dexterity: 14,
     constitution: 16,
@@ -15,7 +16,8 @@ const classData = [
   {
     id: 2,
     description: 'An inspiring magician whose power echoes the music of creation',
-    className: 'bard',
+    hit_points: 20,
+    name: 'bard',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -25,7 +27,8 @@ const classData = [
   },{
     id: 3,
     description: 'A priestly champion who wields divine magic in service of a higher power',
-    className: 'cleric',
+    hit_points: 20,
+    name: 'cleric',
     strength: 16,
     dexterity: 8,
     constitution: 14,
@@ -35,7 +38,8 @@ const classData = [
   },{
     id: 4,
     description: 'A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms',
-    className: 'druid',
+    hit_points: 20,
+    name: 'druid',
     strength: 8,
     dexterity: 14,
     constitution: 16,
@@ -45,7 +49,8 @@ const classData = [
   },{
     id: 5,
     description: 'A holy warrior bound to a sacred oath',
-    className: 'paladin',
+    hit_points: 20,
+    name: 'paladin',
     strength: 16,
     dexterity: 8,
     constitution: 14,
@@ -55,7 +60,8 @@ const classData = [
   },{
     id: 6,
     description: 'A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization',
-    className: 'ranger',
+    hit_points: 20,
+    name: 'ranger',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -65,7 +71,8 @@ const classData = [
   },{
     id: 7,
     description: 'A spellcaster who draws on inherent magic from a gift or bloodline',
-    className: 'sorcerer',
+    hit_points: 20,
+    name: 'sorcerer',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -75,7 +82,8 @@ const classData = [
   },{
     id: 8,
     description: 'A wielder of magic that is derived from a bargain with an extraplanar entity',
-    className: 'warlock',
+    hit_points: 20,
+    name: 'warlock',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -85,7 +93,8 @@ const classData = [
   },{
     id: 9,
     description: 'A scholarly magic-user capable of manipulating the structures of reality',
-    className: 'wizard',
+    hit_points: 20,
+    name: 'wizard',
     strength: 8,
     dexterity: 16,
     constitution: 14,
@@ -95,6 +104,6 @@ const classData = [
   },
 ];
 
-const classes = () => db.bulkCreate(classData);
+const classes = () => Class.bulkCreate(classData);
 
 module.exports = classes;

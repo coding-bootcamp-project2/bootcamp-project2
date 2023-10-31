@@ -1,4 +1,4 @@
-const { Spells } = require('../models'); // placeholder route
+const { Spell } = require('../models'); // placeholder route
 
 const spells = [
     {
@@ -53,6 +53,6 @@ const spells = [
       },
   ];
   
-  const spellData = () => db.bulkCreate(spells);
+  const spellData = () => Spell.bulkCreate(spells);
   
   module.exports = spellData;
