@@ -9,7 +9,9 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
+  
   console.log('\n----- DATABASE SYNCED -----\n');
+
   await user ();
   console.log('\n----- USER DATA SEEDED -----\n');
 
@@ -27,7 +29,7 @@ const seedAll = async () => {
 
   await character();
   console.log('\n----- CHARACTER SEEDED -----\n');
-  
+
   process.exit(0);
 };
 
