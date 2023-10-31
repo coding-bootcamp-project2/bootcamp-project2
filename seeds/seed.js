@@ -5,11 +5,11 @@ const weapons = require('./weapons');
 const user = require('./user');
 const character = require('./character');
 
-const sequelize = require('../config/connection');
+const sequelize = require('../controller/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  
+
   console.log('\n----- DATABASE SYNCED -----\n');
 
   await user ();
