@@ -1,24 +1,40 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const path = require('path');
+// import library
+const express = require("express");
+const session = require("express-session");
+const exhbs = require("express-handlebars");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const path = require("path");
 
+// import routes
+const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const helpers = require("./utils/helpers");
+
+// create app, Port and Sess with cookie and handlebars
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const sess = {
+  secret: "Super secret secret",
+  cookie: { sameSite: "strict" },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({ db: sequelize }),
+};
 
-// Register Handlebars.js as the template engine and configure the paths
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main',
-  extname: 'handlebars', // Specify the file extension
-  layoutsDir: path.join(__dirname, 'Handlebars/layouts'), // Path to layouts
-  partialsDir: path.join(__dirname, 'Handlebars/partials'), // Path to partials
-}));
+const hbs = exhbs.create({ helpers });
 
-app.set('view engine', 'handlebars');
+// app use middleware
+app.use(session(sess));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(routes);
 
-// Serve static files (CSS, JavaScript, images) from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+// app set engine to handlebars
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// app.sync and listen
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now Listening"));
 });
