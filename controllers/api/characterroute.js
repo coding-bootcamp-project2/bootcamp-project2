@@ -64,12 +64,12 @@ router.put("/:id", async (req, res) => {
 // Delete a character
 router.delete("/:id", async (req, res) => {
   try {
-    const characterData = await characterData.destroy({
+    const characterData = await Character.destroy({
       where: {
         id: req.params.id,
       },
     });
-
+    console.log(characterData,"TEST")
     if (!characterData) {
       res.status(404).json({ message: "No character found with that id!" });
       return;
@@ -80,4 +80,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 module.exports = router;
