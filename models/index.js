@@ -42,17 +42,17 @@ Character.hasOne(Race, {
 //   foreignKey: "armor_id",
 // });
 Spell.belongsToMany(Character, {
-  through: CharacterSpell
-})
+  through: CharacterSpell,
+});
 Character.belongsToMany(Spell, {
-  through: CharacterSpell
-})
+  through: CharacterSpell,
+});
 Weapon.belongsToMany(Character, {
-  through: CharacterWeapon
-})
+  through: CharacterWeapon,
+});
 Character.belongsToMany(Weapon, {
-  through: CharacterWeapon
-})
+  through: CharacterWeapon,
+});
 
 // Exporting
 module.exports = {

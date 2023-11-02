@@ -121,7 +121,9 @@ img {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
+  position: absolute;
+  top: 250px;
+  margin: 50px 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
@@ -129,7 +131,7 @@ img {
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
+  background-color: #125537;
   color: var(--light);
 }
 
@@ -187,6 +189,10 @@ img {
 }
 
 .background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: rgb(227, 45, 45);
 }
