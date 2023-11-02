@@ -201,9 +201,31 @@ img {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(227, 45, 45);
 }
 
 .login-font {
   font-family: "Eater";
+}
+
+@media screen and (max-width: 1170px) {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Griffy";
+    /* font-weight: bold; */
+  }
+
+  .background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100vw;
+    height: 100vh; */
+    object-fit: cover;
+    object-position: 70%;
+  }
+
+  .btn-no-style {
+    padding: 20px 14px;
+  }
 }
