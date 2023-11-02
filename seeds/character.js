@@ -2,7 +2,7 @@ const { Character } = require("../models"); // placeholder route
 
 const characterData = [
   {
-    character_name: "Evil",
+    character_name: "testname",
     user_id: 1,
     class_id: 1,
     race_id: 2,
