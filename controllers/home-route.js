@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage");
+    res.render("homepage", { loggedIn: req.session.loggedIn });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -13,6 +13,7 @@ router.get("/login", async (req, res) => {
   try {
     // if it's already logged in, just render the homepage
     if (req.session.loggedIn) {
+      console.log(req.session.loggedIn);
       res.redirect("/");
       return;
     }
