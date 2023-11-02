@@ -13,19 +13,19 @@ CharacterWeapon.init(
       autoIncrement: true,
     },
     character_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "dndcharacter",
-          key: "id",
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: "dndcharacter",
+        key: "id",
       },
-      weapon_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "weapon",
-          key: "id",
-        },
+    },
+    weapon_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "weapon",
+        key: "id",
       },
+    },
   },
   {
     sequelize,

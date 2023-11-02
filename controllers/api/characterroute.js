@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const { Character, User } = require("../../models");
 
 // Get all characters
@@ -7,7 +8,7 @@ router.get("/", async (req, res) => {
     const characterData = await Character.findAll({
       include: [{ model: User }],
     });
-    console.log(characterData)
+    console.log(characterData);
     res.status(200).json(characterData);
   } catch (err) {
     res.status(500).json(err);
@@ -69,7 +70,7 @@ router.delete("/:id", async (req, res) => {
         id: req.params.id,
       },
     });
-    console.log(characterData,"TEST")
+    console.log(characterData, "TEST");
     if (!characterData) {
       res.status(404).json({ message: "No character found with that id!" });
       return;
