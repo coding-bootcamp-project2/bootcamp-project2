@@ -1,11 +1,9 @@
 const router = require("express").Router();
 const { Class } = require("../../models");
 
-router.get("/class", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
-      const classData = await Class.findByPk(req.params.id, {
-        include: [{ model: Class }]
-      });
+      const classData = await Class.findByPk(req.params.id);
       if (!classData) {
         res.status(404).json({ message: "No class found with this id!" });
         return;
@@ -15,3 +13,5 @@ router.get("/class", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  module.exports = router;
