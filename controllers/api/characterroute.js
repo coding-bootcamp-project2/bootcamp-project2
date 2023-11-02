@@ -4,9 +4,10 @@ const { Character, User } = require("../../models");
 // Get all characters
 router.get("/", async (req, res) => {
   try {
-    const characterData = await Location.findAll({
+    const characterData = await Character.findAll({
       include: [{ model: User }],
     });
+    console.log(characterData)
     res.status(200).json(characterData);
   } catch (err) {
     res.status(500).json(err);
