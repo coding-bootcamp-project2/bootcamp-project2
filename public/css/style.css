@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: var(--quatrinary);
 }
 
@@ -29,15 +29,22 @@ a:visited {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 40px;
-  text-align: start;
+  text-align: center;
   background: var(--primary);
   color: var(--light);
 }
 
 h1 {
+  font-size: 50px;
   text-align: center;
+  font-family: "Griffy";
+  /* font-weight: bold; */
 }
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -129,9 +136,9 @@ img {
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  border-style: double;
+  border-style: solid;
   border-width: thick;
-  background-color: #125537;
+  background-image: linear-gradient(rgb(16, 15, 15), rgb(243, 6, 6));
   color: var(--light);
 }
 
@@ -195,4 +202,8 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgb(227, 45, 45);
+}
+
+.login-font {
+  font-family: "Eater";
 }
