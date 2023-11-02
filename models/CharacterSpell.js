@@ -15,7 +15,7 @@ CharacterSpell.init(
     character_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: "charcter",
+          model: "dndcharacter",
           key: "id",
         },
       },
