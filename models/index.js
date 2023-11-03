@@ -17,16 +17,16 @@ Character.belongsTo(User, {
 User.hasMany(Character, {
   foreignKey: "user_id",
 });
-Class.belongsTo(Character, {
+Class.hasMany(Character, {
   foreignKey: "class_id",
 });
-Character.hasOne(Class, {
+Character.belongsTo(Class, {
   foreignKey: "class_id",
 });
-Race.belongsTo(Character, {
+Race.hasMany(Character, {
   foreignKey: "race_id",
 });
-Character.hasOne(Race, {
+Character.belongsTo(Race, {
   foreignKey: "race_id",
 });
 // Skill.belongsTo(Character, {
