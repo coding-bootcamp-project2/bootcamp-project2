@@ -70,11 +70,12 @@ nav a:hover {
 }
 
 .post {
-  flex: 4;
+  /* flex: 4; */
   background-color: #fff;
-  display: flex;
+  width: 100%;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 }
 
 .btn-no-style {
@@ -193,3 +194,38 @@ img {
 .strong {
   font-weight: bold;
 }
+.character-template{
+}
+.character-info {
+display: flex;
+justify-content: space-evenly;
+}
+#character-name{
+
+}
+#character-crn{
+
+}
+.character-image{
+}
+.box-outline {
+  border: #d47f11 solid 3px;
+  border-radius: 10px;
+  padding: 3px;
+}
+.character-stats {
+  float: left;
+  width: 50%;
+}
+.character-abilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 98%;
+  margin-top:175px;
+  justify-content: space-evenly;
+  gap:75px 400px;
+}
+/* .abilities-align{
+  flex-basis: 32%;
+} */
