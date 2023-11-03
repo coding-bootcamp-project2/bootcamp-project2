@@ -23,29 +23,29 @@
     />
   </head>
 
-  <body>
-    <header>
-      <h1>Dungeons and Dragons Character Generator</h1>
-    </header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/api/character/create">Create Character</a>
-      <a href="/api/character">Your Character</a>
-      <a href="/api/monster">Monsters</a>
-      {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-        <a href="/login">Login</a>
-      {{/if}}
-    </nav>
-    <main>
-      <div class="post">
-        {{{body}}}
-      </div>
-    </main>
+<body>
+  <header>
+    <h1>Welcome to the Four Seasons Museum</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
     {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
     {{/if}}
-  </body>
+  </nav>
+  <main>
+    <aside>
+      <h2>Enjoy the galleries!</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>
