@@ -5,7 +5,7 @@ const submission = async (event) => {
     event.preventDefault()
     console.log("MESSAGE!!!!")
     const classData = await fetch(`/api/class/${dndClass}`)
-    console.log(classData.dexterity)
+    console.log(classData.name)
 }
 
 formSubmit.addEventListener('submit', submission) 
