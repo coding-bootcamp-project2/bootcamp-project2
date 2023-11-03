@@ -1,3 +1,19 @@
+const showSignupForm = () => {
+  const loginCard = document.querySelector(".login-card");
+  const signupCard = document.querySelector(".signup-card");
+
+  loginCard.classList.add("hidden");
+  signupCard.classList.remove("hidden");
+};
+
+const showLoginForm = () => {
+  const loginCard = document.querySelector(".login-card");
+  const signupCard = document.querySelector(".signup-card");
+
+  loginCard.classList.remove("hidden");
+  signupCard.classList.add("hidden");
+};
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -38,6 +54,10 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+document.querySelector(".btn-signup").addEventListener("click", showSignupForm);
+
+document.querySelector(".btn-login").addEventListener("click", showLoginForm);
 
 document
   .querySelector(".login-form")

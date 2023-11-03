@@ -61,7 +61,7 @@ Character.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "character",
+    modelName: "dndcharacter",
   }
 );
 
