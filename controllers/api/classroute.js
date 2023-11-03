@@ -9,7 +9,9 @@ router.get("/:id", async (req, res) => {
       res.status(404).json({ message: "No class found with this id!" });
       return;
     }
-    res.render("test", { dndClass });
+    console.log(dndClass);
+    res.status(200).json(dndClass);
+    // res.render("test", { dndClass });
   } catch (err) {
     res.status(500).json(err);
   }
