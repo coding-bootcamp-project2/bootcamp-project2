@@ -1,18 +1,7 @@
 <form class="question-form">
-        {{!-- <h2>Multiple-Choice Questionnaire</h2>
+  <button class="formButton" type="submit">Submit</button>
+</form>
 
-        {{#each questions}}
-        <div class="question">
-            <p>{{this.questionText}}</p>
-            {{#each this.choices}}
-            <label>
-                <input type="radio" name="{{../questionId}}" value="{{@index}}"> {{this}}
-            </label>
-            {{/each}}
-        </div>
-        {{/each}} --}}
+<p><strong>Name:</strong> {{dndClass.name}}</p>
 
-        <button class= "formButton" type="submit">Submit</button>
-    </form>
-    <p>{{dndClass.name}}</p>
-    <script src="/js/form.js"></script>
+<script src="/js/form.js"></script>

@@ -1,11 +1,16 @@
-const formSubmit = document.querySelector('.question-form')
-const dndClass = 1
+const formSubmit = document.querySelector(".question-form");
+const dndClassId = 1;
 
 const submission = async (event) => {
-    event.preventDefault()
-    console.log("MESSAGE!!!!")
-    const classData = await fetch(`/api/class/${dndClass}`)
-    console.log(classData.name)
-}
+  event.preventDefault();
+  console.log("MESSAGE!!!!");
+  const classData = await fetch(`/api/class/${dndClassId}`);
 
-formSubmit.addEventListener('submit', submission) 
+  if (classData.ok) {
+    console.log("Response OK");
+  } else {
+    alert("Failed to retrive class.");
+  }
+};
+
+formSubmit.addEventListener("submit", submission);

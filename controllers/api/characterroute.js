@@ -1,15 +1,19 @@
 const router = require("express").Router();
 
-const { Character, User } = require("../../models");
+const { Character, User, Class, Race } = require("../../models");
 
 // Get all characters
 router.get("/", async (req, res) => {
   try {
-    const characterData = await Character.findAll({
-      include: [{ model: User }],
+    const characterDataArr = await Character.findAll({
+      include: [{ model: User }, { model: Class }, { model: Race }],
     });
-    console.log(characterData);
-    res.status(200).json(characterData);
+
+    const [characterData] = characterDataArr;
+    const character = characterData.get({ plain: true });
+    console.log(character);
+    res.render("character", { character });
+    // res.status(200).json(characterData);
   } catch (err) {
     res.status(500).json(err);
   }
