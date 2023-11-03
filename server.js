@@ -6,11 +6,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
 
 // Import routes
+const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const helpers = require("./utils/helpers");
 const charactersAllRoute = require('./controllers/api/charactersallroute');
-
-// Import database connection
-const sequelize = require('./config/connection');
-
 
 // Create the Express app
 const app = express();
@@ -33,6 +32,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
 // Set the routes
 app.use('/characters', charactersAllRoute);
@@ -41,10 +41,9 @@ app.use('/characters', charactersAllRoute);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Sync the database and start the server
+// app.sync and listen
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
+  app.listen(PORT, () => console.log("Now Listening"));
 });
+
 
