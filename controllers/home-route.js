@@ -19,6 +19,7 @@ router.get("/login", async (req, res) => {
   try {
     // if it's already logged in, just render the homepage
     if (req.session.loggedIn) {
+      console.log(req.session.loggedIn);
       res.redirect("/");
       return;
     }

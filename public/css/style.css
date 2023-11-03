@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: var(--quatrinary);
 }
 
@@ -29,15 +29,22 @@ a:visited {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 40px;
-  text-align: start;
+  text-align: center;
   background: var(--primary);
   color: var(--light);
 }
 
 h1 {
+  font-size: 50px;
   text-align: center;
+  font-family: "Griffy";
+  /* font-weight: bold; */
 }
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -122,15 +129,17 @@ img {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
+  position: absolute;
+  top: 250px;
+  margin: 50px 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  border-style: double;
+  border-style: solid;
   border-width: thick;
-  background-color: #577a7c;
+  background-image: linear-gradient(rgb(16, 15, 15), rgb(243, 6, 6));
   color: var(--light);
 }
 
@@ -188,44 +197,36 @@ img {
 }
 
 .background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100vh;
 }
-.strong {
-  font-weight: bold;
-}
-.character-template{
-}
-.character-info {
-display: flex;
-justify-content: space-evenly;
-}
-#character-name{
 
+.login-font {
+  font-family: "Eater";
 }
-#character-crn{
 
+@media screen and (max-width: 1170px) {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Griffy";
+    /* font-weight: bold; */
+  }
+
+  .background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 70%;
+  }
+
+  .btn-no-style {
+    padding: 20px 14px;
+  }
 }
-.character-image{
-}
-.box-outline {
-  border: #d47f11 solid 3px;
-  border-radius: 10px;
-  padding: 3px;
-}
-.character-stats {
-  float: left;
-  width: 50%;
-}
-.character-abilities {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  width: 98%;
-  margin-top:175px;
-  justify-content: space-evenly;
-  gap:75px 400px;
-}
-/* .abilities-align{
-  flex-basis: 32%;
-} */

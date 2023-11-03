@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const { Character, User } = require("../../models");
+
+const { Character, User, Class, Race } = require("../../models");
 
 // Get all characters
 router.get("/", async (req, res) => {
   try {
-    const characterData = await Character.findAll({
-      include: [{ model: User }],
+    const characterDataArr = await Character.findAll({
+      include: [{ model: User }, { model: Class }, { model: Race }],
     });
-    console.log(characterData)
-    res.status(200).json(characterData);
+    res.status(200).json(characterDataArr);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -18,14 +18,17 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const characterData = await Character.findByPk(req.params.id, {
-      include: [{ model: User }],
+      include: [{ model: User }, { model: Class }, { model: Race }],
     });
 
     if (!characterData) {
       res.status(404).json({ message: "No character found with this id!" });
       return;
     }
-    res.status(200).json(characterData);
+    const character = characterData.get({ plain: true });
+    console.log(character);
+    res.render("character", { character });
+    // res.status(200).json(characterData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -34,10 +37,15 @@ router.get("/:id", async (req, res) => {
 // Create a character
 router.post("/", async (req, res) => {
   try {
+    console.log("create character------------");
+    console.log(req.body);
     const newCharacter = await Character.create({
       ...req.body,
+      user_id: 1,
     });
-    res.json(newCharacter);
+    console.log(newCharacter);
+    res.status(200).json(newCharacter);
+    // res.render(character, { newCharacter });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -69,7 +77,7 @@ router.delete("/:id", async (req, res) => {
         id: req.params.id,
       },
     });
-    console.log(characterData,"TEST")
+    console.log(characterData, "TEST");
     if (!characterData) {
       res.status(404).json({ message: "No character found with that id!" });
       return;

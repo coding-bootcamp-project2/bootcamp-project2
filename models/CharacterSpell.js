@@ -13,19 +13,19 @@ CharacterSpell.init(
       autoIncrement: true,
     },
     character_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "dndcharacter",
-          key: "id",
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: "dndcharacter",
+        key: "id",
       },
-      spell_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "spell",
-          key: "id",
-        },
+    },
+    spell_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "spell",
+        key: "id",
       },
+    },
   },
   {
     sequelize,
