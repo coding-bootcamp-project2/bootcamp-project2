@@ -3,15 +3,14 @@ const { Class } = require("../../models");
 
 router.get("/:id", async (req, res) => {
     try {
-      console.log(req.params.id)
-      console.log("IT WORKED--------")
       const classData = await Class.findByPk(req.params.id);
-      console.log("Class Data:", classData)
+      const dndClass = classData.get({plain: true})
+      console.log("Class Data:", dndClass)
       if (!classData) {
         res.status(404).json({ message: "No class found with this id!" });
         return;
       }
-      res.status(200).json(classData);
+      res.render("test", {dndClass});
     } catch (err) {
       res.status(500).json(err);
     }
