@@ -3,12 +3,7 @@ const { Character } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    const characterData = await Character.findByPk(1,{
-      include: [{ model: Class}]
-    })
-    const character = characterData.get({ plain: true})
-    console.log(character)
-    res.render("character",character );
+    res.render("homepage", { loggedIn: req.session.loggedIn });
   } catch (error) {
     res.status(500).json(error);
   }

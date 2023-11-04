@@ -208,6 +208,50 @@ img {
   font-family: "Eater";
 }
 
+.strong {
+  font-weight: bold;
+}
+.character-template{
+  margin-top: 2em;
+}
+.character-template h2{
+  color:white;
+  font-family: "Griffy"
+}
+.character-info {
+display: flex;
+justify-content: space-evenly;
+}
+.character-image{
+  float: right;
+  width: 49%;
+  /* height: 250px;
+  width: 250px; */
+  text-align: center;
+}
+.box-outline {
+  /* border: #d47f11 solid 3px; */
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #6c6b67;
+  height: 50px;
+  background: rgb(229,142,6);
+  background: linear-gradient(90deg, rgba(229,142,6,1) 8%, rgba(0,0,0,1) 95%);
+}
+.character-stats {
+  margin: 50px 0px 0px 55px;
+  float: left;
+}
+.character-abilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 98%;
+  margin-top:300px;
+  justify-content: space-evenly;
+  gap:100px 400px;
+}
+
 @media screen and (max-width: 1170px) {
   h1 {
     font-size: 30px;
