@@ -225,12 +225,9 @@ justify-content: space-evenly;
 .character-image{
   float: right;
   width: 49%;
-  /* height: 250px;
-  width: 250px; */
   text-align: center;
 }
 .box-outline {
-  /* border: #d47f11 solid 3px; */
   border-radius: 10px;
   padding: 10px;
   background-color: #6c6b67;
@@ -239,8 +236,9 @@ justify-content: space-evenly;
   background: linear-gradient(90deg, rgba(229,142,6,1) 8%, rgba(0,0,0,1) 95%);
 }
 .character-stats {
-  margin: 50px 0px 0px 55px;
-  float: left;
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-around;
 }
 .character-abilities {
   display: flex;
