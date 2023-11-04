@@ -1,0 +1,150 @@
+<div id="form-container">
+    <form id="question-form">
+        <h2>Multiple-Choice Questionnaire</h2>
+
+        {{#each questions}}
+        <div class="question">
+            <p>{{this.questionText}}</p>
+            {{#each this.choices}}
+            <label>
+                <input type="radio" name="{{../questionId}}" value="{{@index}}"> {{this}}
+            </label>
+            {{/each}}
+        </div>
+        {{/each}}
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="form-template" type="text/x-handlebars-template">
+    <form id="question-form">
+        <h2>Multiple-Choice Questionnaire</h2>
+
+        {{#each questions}}
+        <div class="question">
+            <p>{{this.questionText}}</p>
+            {{#each this.choices}}
+            <label>
+                <input type="radio" name="{{../questionId}}" value="{{@index}}"> {{this}}
+            </label>
+            {{/each}}
+        </div>
+        {{/each}}
+
+        <button class="formButton" type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    var data = {
+        questions: [
+            {
+                questionId: 1,
+                questionText: "What's your preferred role in a group?",
+                choices:
+                    [
+                        "Lead the charge and smash things",
+                        "Charm and inspire others",
+                        "Heal and support your allies",
+                        "Connect with nature and transform",
+                        "Swear an oath to protect the innocent",
+                        "Unleash powerful magic with your will",
+                        "Make a pact with a mysterious entity",
+                        "Study and manipulate arcane knowledge"
+                    ]
+            },
+            {
+                questionId: 2,
+                questionText: "What's your preferred weapon?",
+                choices:
+                    [
+                        "A massive, two-handed axe",
+                        "A musical instrument",
+                        "A mace or holy symbol",
+                        "A staff or a sling",
+                        "A sword and shield",
+                        "Magic spells",
+                        "Eldritch blasts",
+                        "A spellbook and wand"
+                    ]
+            },
+            {
+                questionId: 3,
+                questionText: "What's your favorite environment?",
+                choices:
+                    [
+                        "The wilderness",
+                        "A lively tavern",
+                        "A sacred temple",
+                        "Dense forests",
+                        "Defending the city walls",
+                        "Mysterious arcane libraries",
+                        "The shadowy places",
+                        "A tower filled with magical tomes"
+                    ]
+            },
+            {
+                questionId: 4,
+                questionText: "What motivates you?",
+                choices:
+                    [
+                        "Fierce loyalty to your tribe",
+                        "Fame and admiration",
+                        "Faith and devotion to a deity",
+                        "Protecting nature",
+                        "Upholding justice and righteousness",
+                        "Seeking knowledge and power",
+                        "Making pacts for power",
+                        "Unraveling magical mysteries"
+                    ]
+            },
+            {
+                questionId: 5,
+                questionText: "Your preferred fighting style is...",
+                choices:
+                    [
+                        "Reckless and aggressive",
+                        "Supportive and inspiring",
+                        "Defensive and healing",
+                        "Versatile and adaptable",
+                        "Defensive and honorable",
+                        "Relying on powerful spells",
+                        "Magical curses",
+                        "Strategic and spellcasting"
+                    ]
+            },
+            {
+                questionId: 6,
+                questionText: "How do you feel about rules and authority?",
+                choices:
+                    [
+                        "Ignore them when they get in the way",
+                        "Bend them to your advantage",
+                        "Follow them devoutly",
+                        "Nature's laws are your guide",
+                        "Uphold justice and protect the innocent",
+                        "Create your own rules with magic",
+                        "Make deals with powerful entities",
+                        "Seek hidden knowledge beyond rules"
+                    ]
+            },
+            
+    };
+
+    // Compile the Handlebars template
+    var source = $("#form-template").html();
+    var template = Handlebars.compile(source);
+
+    var html = template(data);
+
+    $("#form-container").html(html);
+
+    $("#question-form").on("submit", function (event) {
+        event.preventDefault();
+    });
+
+
+</script>
+
+<script src= "/js/form.js"></script>
