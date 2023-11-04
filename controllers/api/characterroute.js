@@ -17,7 +17,10 @@ router.get("/", async (req, res) => {
 // Create a character page route
 router.get("/create", async (req, res) => {
   try {
-    res.render("createcharacter", { loggedIn: req.session.loggedIn });
+    res.render("createcharacter", {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -26,11 +29,9 @@ router.get("/create", async (req, res) => {
 // Create a character
 router.post("/create", async (req, res) => {
   try {
-    console.log("create character------------");
-    console.log(req.body);
     const newCharacter = await Character.create({
       ...req.body,
-      user_id: 1,
+      user_id: req.session.userId,
     });
     console.log(newCharacter);
     res.status(200).json(newCharacter);
