@@ -246,10 +246,12 @@ justify-content: space-evenly;
   width: 98%;
   margin-top:300px;
   justify-content: space-evenly;
-  gap:100px 400px;
+  gap:100px 500px;
 }
 .update-btn{
   color:white;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1170px) {
