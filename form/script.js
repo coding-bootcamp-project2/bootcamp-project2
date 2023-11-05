@@ -10,9 +10,10 @@ var questions = [
         c: "Heal and support your allies",
         d: "Connect with nature and transform",
         e: "Swear an oath to protect the innocent",
-        f: "Unleash powerful magic with your will",
-        g: "Make a pact with a mysterious entity",
-        h: "Study and manipulate arcane knowledge"
+        f: "Sneaking and Scouting ahead for enemies",
+        g: "Unleash powerful magic with your will",
+        h: "Make a pact with a mysterious entity",
+        i: "Study and manipulate arcane knowledge"
     },
     {
         questionId: 2,
@@ -22,9 +23,10 @@ var questions = [
         c: "A mace or holy symbol",
         d: "A staff or a sling",
         e: "A sword and shield",
-        f: "Magic spells",
-        g: "Eldritch blasts",
-        h: "A spellbook and wand"
+        f: "A longbow",
+        g: "Magic spells",
+        h: "Eldritch blasts",
+        i: "A spellbook and wand"
     },
     {
         questionId: 3,
@@ -34,9 +36,10 @@ var questions = [
         c: "A sacred temple",
         d: "Dense forests",
         e: "Defending the city walls",
-        f: "Mysterious arcane libraries",
-        g: "The shadowy places",
-        h: "A tower filled with magical tomes"
+        f: "Vast plains",
+        g: "Mysterious arcane libraries",
+        h: "The shadowy places",
+        i: "A tower filled with magical tomes"
     },
     {
         questionId: 4,
@@ -46,9 +49,10 @@ var questions = [
         c: "Faith and devotion to a deity",
         d: "Protecting nature",
         e: "Upholding justice and righteousness",
-        f: "Seeking knowledge and power",
-        g: "Making pacts for power",
-        h: "Unraveling magical mysteries"
+        f: "Defending the weak",
+        g: "Seeking knowledge and power",
+        h: "Making pacts for power",
+        i: "Unraveling magical mysteries"
     },
     {
         questionId: 5,
@@ -58,9 +62,49 @@ var questions = [
         c: "Follow them devoutly",
         d: "Nature's laws are your guide",
         e: "Uphold justice and protect the innocent",
-        f: "Create your own rules with magic",
-        g: "Make deals with powerful entities",
-        h: "Seek hidden knowledge beyond rules"
+        f: "You are your own authority",
+        g: "Create your own rules with magic",
+        h: "Make deals with powerful entities",
+        i: "Seek hidden knowledge beyond rules"
+    },
+    {
+        questionId: 6,
+        question: " Your moral compass points towards...",
+        a: "Your tribe's code",
+        b: "What benefits you and your friends",
+        c: "Your deity's teachings",
+        d: "Protecting nature and balance",
+        e: "Upholding honor and glory",
+        f: "Do what you can for those who need it",
+        g: "The pursuit of knowledge",
+        h: "The power of darkness",
+        i: "The secrets of the arcane"
+    },
+    {
+        questionId: 7,
+        question: "What's your greatest fear?",
+        a: "Losing your rage and control",
+        b: "Losing your charm and popularity",
+        c: "Losing your faith and connection to your deity",
+        d: "The destruction of the natural world",
+        e: "Being defeated in battle",
+        f: "Losing your home",
+        g: "Losing your magical abilities",
+        h: "The wrath of your patron",
+        i: "Failing to uncover hidden knowledge"
+    },
+    {
+        questionId: 8,
+        question: "What's your favorite drink?",
+        a: "Mead",
+        b: "Fine wine",
+        c: "Holy water",
+        d: "Herbal tea",
+        e: "Water",
+        f: "Ale",
+        g: "Elixir of magic",
+        h: "A mysterious concoction",
+        i: "Potion of knowledge"
     },
 ];
 
@@ -87,6 +131,7 @@ function showQuestion() {
 }
 
 async function checkAnswer(event) {
+    event.preventDefault();
     var userClassAnswer = event.target.dataset.class;
     answers.push(userClassAnswer);
     console.log(answers);
@@ -95,20 +140,31 @@ async function checkAnswer(event) {
         showQuestion();
     } else {
         console.log(answers);
-        // write some logic to check answers array for most common answer
-        // send fetch request to get class by id
-        userClass = await getClassById("1");
+        // logic to check answers array for most common answer
+        var frequency = {};  // array of frequency.
+        var max = 0;  // holds the max frequency.
+        var result;   // holds the max frequency element.
+        for (var v in answers) {
+            frequency[answers[v]] = (frequency[answers[v]] || 0) + 1; // increment frequency.
+            if (frequency[answers[v]] > max) { // is this frequency > max so far ?
+                max = frequency[answers[v]];  // update max.
+                result = answers[v];  // update result
+                console.log("Result:", result) // result is the submission number with max frequency which will end up being the class number
+            }
+        }
+        userClass = await getClassById(result);
         questionDiv.innerText = "Quiz completed. You can submit the form here.";
         answerButtons.innerHTML = "";
     }
 }
 
+// send fetch request to get class by id
 async function getClassById(id) {
-    const response = await fetch(`http://example.com/movies.json/${id}`);
+    const response = await fetch(`http://localhost:3001/api/class/${id}`);
     const classData = await response.json();
     console.log(classData);
     return classData
-  }
+}
 
 startQuizButton.addEventListener("click", function (event) {
     event.preventDefault();
