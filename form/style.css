@@ -60,3 +60,7 @@ button:hover {
 #startquiz:hover {
     background-color: #00FF00;
 }
+
+.hide {
+    display: none
+}
