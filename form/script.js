@@ -131,6 +131,7 @@ function showQuestion() {
 }
 
 async function checkAnswer(event) {
+    event.preventDefault();
     var userClassAnswer = event.target.dataset.class;
     answers.push(userClassAnswer);
     console.log(answers);
@@ -147,13 +148,13 @@ async function checkAnswer(event) {
             frequency[answers[v]] = (frequency[answers[v]] || 0) + 1; // increment frequency.
             if (frequency[answers[v]] > max) { // is this frequency > max so far ?
                 max = frequency[answers[v]];  // update max.
-                result = answers[v];          // update result.
+                result = answers[v];  // update result
+                console.log("Result:", result) // result is the submission number with max frequency which will end up being the class number
             }
         }
         userClass = await getClassById(result);
         questionDiv.innerText = "Quiz completed. You can submit the form here.";
         answerButtons.innerHTML = "";
-    
     }
 }
 
