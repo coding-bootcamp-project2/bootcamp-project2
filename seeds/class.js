@@ -12,6 +12,7 @@ const classData = [
     intelligence: 10,
     wisdom: 12,
     charisma: 8,
+    image: "/asset/barbarian.png",
   },
   {
     description:
@@ -24,6 +25,7 @@ const classData = [
     intelligence: 10,
     wisdom: 12,
     charisma: 16,
+    image: "/asset/bard.png",
   },
   {
     description:
@@ -36,6 +38,7 @@ const classData = [
     intelligence: 10,
     wisdom: 16,
     charisma: 12,
+    image: "/asset/cleric.png",
   },
   {
     description:
@@ -48,6 +51,7 @@ const classData = [
     intelligence: 10,
     wisdom: 16,
     charisma: 12,
+    image: "/asset/druid.png",
   },
   {
     description: "A holy warrior bound to a sacred oath",
@@ -59,6 +63,7 @@ const classData = [
     intelligence: 10,
     wisdom: 12,
     charisma: 16,
+    image: "/asset/paladin.png",
   },
   {
     description:
@@ -71,6 +76,7 @@ const classData = [
     intelligence: 10,
     wisdom: 16,
     charisma: 12,
+    image: "/asset/ranger.png",
   },
   {
     description:
@@ -83,6 +89,7 @@ const classData = [
     intelligence: 10,
     wisdom: 12,
     charisma: 14,
+    image: "/asset/sorcerer.png",
   },
   {
     description:
@@ -95,6 +102,7 @@ const classData = [
     intelligence: 10,
     wisdom: 12,
     charisma: 16,
+    image: "/asset/warlock.png",
   },
   {
     description:
@@ -107,6 +115,7 @@ const classData = [
     intelligence: 16,
     wisdom: 12,
     charisma: 8,
+    image: "/asset/wizard.png",
   },
 ];
 
