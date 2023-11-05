@@ -27,7 +27,9 @@ const createCharacter = async (event) => {
     // document.location.replace(`/api/class/${dndClassId}`);
     if (response.ok) {
       console.log(response);
-      document.location.replace("/api/character/");
+      const newCharacter = await response.json();
+      const newCharacterId = newCharacter.id;
+      document.location.replace(`/api/character/${newCharacterId}}`);
     } else {
       alert("Failed to create character.");
     }
