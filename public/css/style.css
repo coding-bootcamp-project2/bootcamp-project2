@@ -213,10 +213,12 @@ img {
 }
 .character-template{
   margin-top: 2em;
+  background-image: url('../asset/.png');
 }
 .character-template h2{
-  color:white;
-  font-family: "Griffy"
+  color:rgb(0, 0, 0);
+  font-family: "Griffy";
+  background-image: url('../asset/fire.png');
 }
 .character-info {
 display: flex;
