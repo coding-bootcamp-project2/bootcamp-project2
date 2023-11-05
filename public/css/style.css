@@ -1,3 +1,6 @@
+*{
+  margin:0;
+}
 :root {
   --primary: #000000;
   --secondary: #d47f11;
@@ -211,16 +214,26 @@ img {
   font-weight: bold;
 }
 .character-template {
-  margin-top: 2em;
-  background-image: url('../asset/character-background.jpg');
+  background-color: #000000;
+  background-image: url('../asset/background-image.png');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 .character-template h2 {
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: "Griffy";
+  background-image: url('../asset/fire.png');
+  font-size: 2em;
+}
+
+.character-template h2:hover {
+  color: var(--light);
+  background-color: var(--light);
 }
 .character-info {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .character-image {
   float: right;
@@ -231,12 +244,7 @@ img {
   border-radius: 10px;
   padding: 10px;
   height: 50px;
-  background: rgb(229, 142, 6);
-  background: linear-gradient(
-    90deg,
-    rgba(229, 142, 6, 1) 8%,
-    rgba(0, 0, 0, 1) 95%
-  );
+
 }
 .character-stats {
   display: flex;
@@ -246,11 +254,13 @@ img {
 .character-abilities {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
-  width: 98%;
-  margin-top: 300px;
-  justify-content: center;
-  gap: 100px 600px;
+  flex-direction: row;
+  width: 35%;
+  justify-content: flex-end;
+  gap: 60px 400px;
+  margin-top: -500px;
+  margin-left: 1300px;
+
 }
 .update-btn {
   color: white;
@@ -258,9 +268,10 @@ img {
   font-size: 100%;
   transition: color 0.1s;
   border: none;
+  background-image: url('../asset/fire.png');
 }
 .update-btn:hover {
-  color: var(--secondary);
+  color: var(--primary);
   background-color: var(--dark);
 }
 
