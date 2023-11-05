@@ -33,103 +33,45 @@
         {{/each}}
 
         <button class="formButton" type="submit">Submit</button>
+        <button class="formButton" type="submit">Submit</button>
     </form>
 </div>
 
+<script>
 <script>
     var data = {
         questions: [
             {
                 questionId: 1,
                 questionText: "What's your preferred role in a group?",
-                choices:
-                    [
-                        "Lead the charge and smash things",
-                        "Charm and inspire others",
-                        "Heal and support your allies",
-                        "Connect with nature and transform",
-                        "Swear an oath to protect the innocent",
-                        "Unleash powerful magic with your will",
-                        "Make a pact with a mysterious entity",
-                        "Study and manipulate arcane knowledge"
-                    ]
+                choices: ["Lead the charge and smash things", "Charm and inspire others", "Heal and support your allies", "Connect with nature and transform", "Swear an oath to protect the innocent", "Unleash powerful magic with your will", "Make a pact with a mysterious entity", "Study and manipulate arcane knowledge"]
             },
             {
                 questionId: 2,
-                questionText: "What's your preferred weapon?",
-                choices:
-                    [
-                        "A massive, two-handed axe",
-                        "A musical instrument",
-                        "A mace or holy symbol",
-                        "A staff or a sling",
-                        "A sword and shield",
-                        "Magic spells",
-                        "Eldritch blasts",
-                        "A spellbook and wand"
-                    ]
+                questionText: "Question 2: What is your favorite animal?",
+                choices: ["Dog", "Cat", "Lion", "Elephant", "Dolphin", "Hawk", "Snake", "Tiger", "Horse"]
             },
             {
                 questionId: 3,
-                questionText: "What's your favorite environment?",
-                choices:
-                    [
-                        "The wilderness",
-                        "A lively tavern",
-                        "A sacred temple",
-                        "Dense forests",
-                        "Defending the city walls",
-                        "Mysterious arcane libraries",
-                        "The shadowy places",
-                        "A tower filled with magical tomes"
-                    ]
+                questionText: "Question 3: What is your favorite food?",
+                choices: ["Pizza", "Burger", "Sushi", "Pasta", "Steak", "Tacos", "Salad", "Ice Cream", "Curry"]
             },
             {
                 questionId: 4,
-                questionText: "What motivates you?",
-                choices:
-                    [
-                        "Fierce loyalty to your tribe",
-                        "Fame and admiration",
-                        "Faith and devotion to a deity",
-                        "Protecting nature",
-                        "Upholding justice and righteousness",
-                        "Seeking knowledge and power",
-                        "Making pacts for power",
-                        "Unraveling magical mysteries"
-                    ]
+                questionText: "Question 4: What is your favorite movie genre?",
+                choices: ["Action", "Comedy", "Drama", "Horror", "Science Fiction", "Fantasy", "Romance", "Adventure", "Animation"]
             },
             {
                 questionId: 5,
-                questionText: "Your preferred fighting style is...",
-                choices:
-                    [
-                        "Reckless and aggressive",
-                        "Supportive and inspiring",
-                        "Defensive and healing",
-                        "Versatile and adaptable",
-                        "Defensive and honorable",
-                        "Relying on powerful spells",
-                        "Magical curses",
-                        "Strategic and spellcasting"
-                    ]
+                questionText: "Question 5: What is your favorite season?",
+                choices: ["Spring", "Summer", "Fall", "Winter", "I don't have a favorite season"]
             },
             {
                 questionId: 6,
-                questionText: "How do you feel about rules and authority?",
-                choices:
-                    [
-                        "Ignore them when they get in the way",
-                        "Bend them to your advantage",
-                        "Follow them devoutly",
-                        "Nature's laws are your guide",
-                        "Uphold justice and protect the innocent",
-                        "Create your own rules with magic",
-                        "Make deals with powerful entities",
-                        "Seek hidden knowledge beyond rules"
-                    ]
-            },
-            
+                questionText: "Question 6: What is your favorite hobby?",
+                choices: ["Reading", "Gaming", "Cooking", "Hiking", "Painting", "Music", "Photography", "Sports", "Other"]
+            }
+        ]
     };
 
     // Compile the Handlebars template
