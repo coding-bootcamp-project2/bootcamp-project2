@@ -221,19 +221,19 @@ img {
   height: 100%;
 }
 .character-template h2 {
-  color: rgb(0, 0, 0);
+  color: var(--light);
   font-family: "Griffy";
-  background-image: url('../asset/fire.png');
+  /* background-image: url('../asset/bb1.png'); */
   font-size: 2em;
 }
 
 .character-template h2:hover {
-  color: var(--light);
+  color: var(--secondary);
   background-color: var(--light);
 }
 .character-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .character-image {
   float: right;
