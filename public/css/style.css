@@ -213,7 +213,7 @@ img {
 }
 .character-template{
   margin-top: 2em;
-  background-image: url('../asset/.png');
+  background-image: url('../asset/character-background.jpg');
 }
 .character-template h2{
   color:rgb(0, 0, 0);
