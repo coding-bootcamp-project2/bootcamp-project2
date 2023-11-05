@@ -245,13 +245,19 @@ justify-content: space-evenly;
   align-items: flex-end;
   width: 98%;
   margin-top:300px;
-  justify-content: space-evenly;
-  gap:100px 500px;
+  justify-content: center;
+  gap:100px 600px;
 }
 .update-btn{
   color:white;
-  display: flex;
-  justify-content: center;
+  cursor: pointer;
+  font-size: 100%;
+  transition: color 0.1s;
+  border: none;
+}
+.update-btn:hover{
+  color: var(--secondary);
+  background-color: var(--dark);
 }
 
 @media screen and (max-width: 1170px) {
