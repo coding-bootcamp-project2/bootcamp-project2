@@ -41,9 +41,9 @@ const createCharacter = async (event) => {
 characterForm.addEventListener("submit", createCharacter);
 
 // Questions and answers which will be displayed during the quiz:
-const answers = [];
-const userClass = "";
-const questions = [
+var answers = [];
+var userClass = "";
+var questions = [
   {
     questionId: 1,
     question: "What's your preferred role in a group?",
@@ -150,19 +150,19 @@ const questions = [
   },
 ];
 
-let currentQuestion = 0;
-const answerButtons = document.getElementById("answer-buttons");
-const questionDiv = document.getElementById("question");
-const startQuizButton = document.getElementById("startquiz");
+var currentQuestion = 0;
+var answerButtons = document.getElementById("answer-buttons");
+var questionDiv = document.getElementById("question");
+var startQuizButton = document.getElementById("startquiz");
 
 function showQuestion() {
-  let questionData = questions[currentQuestion];
+  var questionData = questions[currentQuestion];
   questionDiv.innerText = questionData.question;
   answerButtons.innerHTML = "";
-  for (let i = 1; i <= 8; i++) {
-    let option = questionData[String.fromCharCode(96 + i)];
+  for (var i = 1; i <= 8; i++) {
+    var option = questionData[String.fromCharCode(96 + i)];
     if (option) {
-      const button = document.createElement("button");
+      var button = document.createElement("button");
       button.dataset.class = i;
       button.innerText = option;
       button.id = "answer" + i;
@@ -202,12 +202,12 @@ async function checkAnswer(event) {
 }
 
 // send fetch request to get class by id
-// async function getClassById(id) {
-//   const response = await fetch(`http://localhost:3001/api/class/${id}`);
-//   const classData = await response.json();
-//   console.log(classData);
-//   return classData;
-// }
+async function getClassById(id) {
+  const response = await fetch(`http://localhost:3001/api/class/${id}`);
+  const classData = await response.json();
+  console.log(classData);
+  return classData;
+}
 
 startQuizButton.addEventListener("click", function (event) {
   event.preventDefault();
