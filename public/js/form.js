@@ -1,11 +1,11 @@
-const formSubmit = document.querySelector(".question-form");
-const dndClassId = 1;
-const raceId = 2;
+const characterForm = document.querySelector(".question-form");
 
-const submission = async (event) => {
+const createCharacter = async (event) => {
   event.preventDefault();
   // Tommy's form needs to pass in class ID and race ID.
   // fetch the class data that matches the class ID
+  const dndClassId = document.querySelector("#class-id").value;
+  const raceId = document.querySelector("#race-id").value;
   const response = await fetch(`/api/class/${dndClassId}`);
   const classData = await response.json();
 
@@ -14,12 +14,12 @@ const submission = async (event) => {
     console.log(classData);
     const character = {
       character_name: "David",
-      class_id: classData.id,
+      class_id: dndClassId,
       race_id: raceId,
       level: 1,
     };
     console.log("create character------------");
-    const response = await fetch(`/api/character`, {
+    const response = await fetch(`/api/character/create`, {
       method: "POST",
       body: JSON.stringify(character),
       headers: { "Content-Type": "application/json" },
@@ -27,6 +27,9 @@ const submission = async (event) => {
     // document.location.replace(`/api/class/${dndClassId}`);
     if (response.ok) {
       console.log(response);
+      const newCharacter = await response.json();
+      const newCharacterId = newCharacter.id;
+      document.location.replace(`/api/character/${newCharacterId}}`);
     } else {
       alert("Failed to create character.");
     }
@@ -35,4 +38,4 @@ const submission = async (event) => {
   }
 };
 
-formSubmit.addEventListener("submit", submission);
+characterForm.addEventListener("submit", createCharacter);
