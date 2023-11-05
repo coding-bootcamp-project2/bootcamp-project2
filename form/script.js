@@ -96,15 +96,15 @@ async function checkAnswer(event) {
     } else {
         console.log(answers);
         // write some logic to check answers array for most common answer
-        // send fetch request to get class by id
         userClass = await getClassById("1");
         questionDiv.innerText = "Quiz completed. You can submit the form here.";
         answerButtons.innerHTML = "";
     }
 }
 
+// send fetch request to get class by id
 async function getClassById(id) {
-    const response = await fetch(`http://example.com/movies.json/${id}`);
+    const response = await fetch(`http://localhost:3001/api/class/${id}`);
     const classData = await response.json();
     console.log(classData);
     return classData
