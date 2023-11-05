@@ -1,0 +1,1 @@
+const updateCharacter = document.querySelector("")
