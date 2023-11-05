@@ -1,12 +1,13 @@
-const characterForm = document.querySelector(".question-form");
+const characterForm = document.querySelector("#question-form");
+const answersSection = document.querySelector(".answers-section");
+let classId;
+let raceId = 1;
 
-const createCharacter = async (event) => {
-  event.preventDefault();
+const createCharacter = async (e) => {
+  e.preventDefault();
   // Tommy's form needs to pass in class ID and race ID.
   // fetch the class data that matches the class ID
-  const dndClassId = document.querySelector("#class-id").value;
-  const raceId = document.querySelector("#race-id").value;
-  const response = await fetch(`/api/class/${dndClassId}`);
+  const response = await fetch(`/api/class/${classId}`);
   const classData = await response.json();
 
   // if the class data is found, then create the character
@@ -14,7 +15,7 @@ const createCharacter = async (event) => {
     console.log(classData);
     const character = {
       character_name: "David",
-      class_id: dndClassId,
+      class_id: classId,
       race_id: raceId,
       level: 1,
     };
@@ -38,11 +39,8 @@ const createCharacter = async (event) => {
   }
 };
 
-characterForm.addEventListener("submit", createCharacter);
-
 // Questions and answers which will be displayed during the quiz:
 var answers = [];
-var userClass = "";
 var questions = [
   {
     questionId: 1,
@@ -185,19 +183,21 @@ async function checkAnswer(event) {
     // logic to check answers array for most common answer
     var frequency = {}; // array of frequency.
     var max = 0; // holds the max frequency.
-    var result; // holds the max frequency element.
     for (var v in answers) {
       frequency[answers[v]] = (frequency[answers[v]] || 0) + 1; // increment frequency.
       if (frequency[answers[v]] > max) {
         // is this frequency > max so far ?
         max = frequency[answers[v]]; // update max.
-        result = answers[v]; // update result
-        console.log("Result:", result); // result is the submission number with max frequency which will end up being the class number
+        classId = answers[v]; // update classId
+        console.log("Result:", classId); // classId is the submission number with max frequency which will end up being the class number
       }
     }
-    userClass = await getClassById(result);
+    // userClass = await getClassById(classId);
+    const submitQuizBtn = document.createElement("button");
+    submitQuizBtn.innerText = "Submit";
     questionDiv.innerText = "Quiz completed. You can submit the form here.";
-    answerButtons.innerHTML = "";
+    questionDiv.append(submitQuizBtn);
+    answersSection.classList.add("hidden");
   }
 }
 
@@ -213,5 +213,9 @@ startQuizButton.addEventListener("click", function (event) {
   event.preventDefault();
   currentQuestion = 0;
   showQuestion();
-  answerButtons.classList.remove("hidden");
+  startQuizButton.classList.add("hidden");
+  questionDiv.classList.remove("hidden");
+  answersSection.classList.remove("hidden");
 });
+
+characterForm.addEventListener("submit", createCharacter);
