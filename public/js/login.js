@@ -1,3 +1,19 @@
+const showSignupForm = () => {
+  const loginCard = document.querySelector(".login-card");
+  const signupCard = document.querySelector(".signup-card");
+
+  loginCard.classList.add("hidden");
+  signupCard.classList.remove("hidden");
+};
+
+const showLoginForm = () => {
+  const loginCard = document.querySelector(".login-card");
+  const signupCard = document.querySelector(".signup-card");
+
+  loginCard.classList.remove("hidden");
+  signupCard.classList.add("hidden");
+};
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -5,7 +21,7 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
-    const response = await fetch("/user/login", {
+    const response = await fetch("/api/user/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -26,12 +42,11 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
 
   if (username && password) {
-    const response = await fetch("/user", {
+    const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -39,6 +54,10 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+document.querySelector(".btn-signup").addEventListener("click", showSignupForm);
+
+document.querySelector(".btn-login").addEventListener("click", showLoginForm);
 
 document
   .querySelector(".login-form")
