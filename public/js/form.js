@@ -210,7 +210,7 @@ async function getClassById(id) {
 }
 
 startQuizButton.addEventListener("click", function (event) {
-  console.log("start!!");
+  event.preventDefault();
   currentQuestion = 0;
   showQuestion();
   startQuizButton.classList.add("hidden");
