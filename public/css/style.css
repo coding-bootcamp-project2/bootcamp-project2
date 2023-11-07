@@ -4,12 +4,18 @@
 :root {
   --primary: #000000;
   --secondary: #d47f11;
+  --primary: #000000;
+  --secondary: #d47f11;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
   --light: #e3e4e3;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
+}
+
+.hidden {
+  display: none;
 }
 
 body {
@@ -185,10 +191,6 @@ img {
   padding: 10px;
 }
 
-.hidden {
-  display: none;
-}
-
 .post-list {
   padding: 10px;
 }
@@ -296,5 +298,4 @@ img {
   .btn-no-style {
     padding: 20px 14px;
   }
-
 }
