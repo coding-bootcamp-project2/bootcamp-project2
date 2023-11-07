@@ -49,6 +49,7 @@ h1 {
   font-size: 50px;
   text-align: center;
   font-family: "Griffy";
+  color: white;
   /* font-weight: bold; */
 }
 
@@ -274,6 +275,8 @@ img {
 }
 
 #question-form {
+  position: absolute;
+  top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,6 +320,8 @@ button:hover {
 }
 
 #startquiz {
+  position: absolute;
+  top: 440px;
   background-color: #008000;
   color: #fff;
   border: none;
