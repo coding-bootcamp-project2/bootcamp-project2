@@ -30,12 +30,12 @@ const createCharacter = async (e) => {
       console.log(response);
       const newCharacter = await response.json();
       const newCharacterId = newCharacter.id;
-      document.location.replace(`/api/character/${newCharacterId}}`);
+      document.location.replace(`/api/character/${newCharacterId}`);
     } else {
       alert("Failed to create character.");
     }
   } else {
-    alert("Failed to retrive class.");
+    alert("Failed to retrieve class.");
   }
 };
 
