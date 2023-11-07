@@ -12,8 +12,7 @@ const helpers = require("./utils/helpers");
 const charactersAllRoute = require('./controllers/api/charactersallroute');
 
 // Create the Express app
-const app = express();
-const PORT = process.env.PORT || 3001;
+const app = express(); // Initialize the app
 
 // Configure session
 const sess = {
@@ -41,9 +40,9 @@ app.use('/characters_all', charactersAllRoute);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// app.sync and listen
+// Sync and listen
 sequelize.sync({ force: false }).then(() => {
+  const PORT = process.env.PORT || 3001;
   app.listen(PORT, () => console.log("Now Listening"));
 });
-
 
