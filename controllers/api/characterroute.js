@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 // Create a character page route
 router.get("/create", async (req, res) => {
   try {
-    res.render("form", {
+    res.render("createcharacter", {
       loggedIn: req.session.loggedIn,
       userId: req.session.userId,
     });
