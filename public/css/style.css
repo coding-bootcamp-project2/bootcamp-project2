@@ -364,3 +364,20 @@ button:hover {
     padding: 20px 14px;
   }
 }
+
+#name {
+  padding: 5px;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+}
+
+select {
+  padding: 5px;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+#raceDropdown{
+  padding: 10px;
+}

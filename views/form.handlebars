@@ -1,5 +1,23 @@
 <form id="question-form">
   <h1>Character Creator</h1>
+  <!-- Name Input -->
+  <div id="nameInput">
+    <label for="name">Name:</label>
+  </div>
+  <input type="text" id="name" name="name" required>
+  <!-- Race Dropdown -->
+  <div id="raceDropdown">
+    <label for="race">Select your character's race:</label>
+    <select id="race" name="race">
+      <option value="dwarf" data-id="1">Dwarf</option>
+      <option value="elf" data-id="2">Elf</option>
+      <option value="halfling" data-id="3">Halfling</option>
+      <option value="human" data-id="4">Human</option>
+      <option value="gnome" data-id="5">Gnome</option>
+      <option value="tiefling" data-id="6">Tiefling</option>
+      <!-- Add more race options as needed -->
+    </select>
+  </div>
   <!-- Question field -->
   <div id="question" class="hidden"></div>
   <!-- Answer buttons -->

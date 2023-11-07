@@ -1,11 +1,16 @@
 const characterForm = document.querySelector("#question-form");
 const answersSection = document.querySelector(".answers-section");
+const raceDropdown = document.querySelector("#race")
+const nameInput = document.querySelector("#name")
+
 let classId;
 let raceId = 1;
 
 const createCharacter = async (e) => {
   e.preventDefault();
   // Tommy's form needs to pass in class ID and race ID.
+  const raceId = raceDropdown.dataset
+  const characterName = nameInput.value
   // fetch the class data that matches the class ID
   const response = await fetch(`/api/class/${classId}`);
   const classData = await response.json();
@@ -14,7 +19,7 @@ const createCharacter = async (e) => {
   if (response.ok) {
     console.log(classData);
     const character = {
-      character_name: "David",
+      character_name: characterName,
       class_id: classId,
       race_id: raceId,
       level: 1,
