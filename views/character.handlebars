@@ -1,33 +1,34 @@
 <!-- Character Template -->
 <div class="character-template">
+
   <div class="strong character-info">
     <h2
       id="character-name"
       class="box-outline"
     >{{character.character_name}}</h2>
-    <H2 id="character-class-race" class="box-outline">Class:
-      {{character.class.name}}
+    <H2 id="character-class" class="box-outline">Class:
+      {{character.class.name}}</H2>
+    <h2 id="character-race" class="box-outline">
       Race:
       {{character.race.name}}</H2>
   </div>
   <div class="character-stats">
-    <h2 class="fb box-outline">Hit Points: {{character.class.hit_points}}</h2>
+    <h2 class="character-hp fb box-outline">Hit Points: {{character.class.hit_points}}</h2>
     <h3><img src="{{character.class.image}}" /></h3>
   </div>
   <div class="character-abilities">
-    <h2 class="box-outline">Strength: {{character.class.strength}}</h2>
-    <h2 class="box-outline">Intelligence: {{character.class.intelligence}}</h2>
-    <h2 class="box-outline">Dexterity: {{character.class.dexterity}}</h2>
-    <h2 class="box-outline">Wisdom: {{character.class.wisdom}}</h2>
-    <h2 class="box-outline">Constitution: {{character.class.constitution}}</h2>
-    <h2 class="box-outline">Charisma: {{character.class.charisma}}</h2>
+    <h2 class="character-strength box-outline">Strength: {{character.class.strength}}</h2>
+    <h2 class="character-intelligence box-outline">Intelligence: {{character.class.intelligence}}</h2>
+    <h2 class="character-dexterity box-outline">Dexterity: {{character.class.dexterity}}</h2>
+    <h2 class="character-wisdom box-outline">Wisdom: {{character.class.wisdom}}</h2>
+    <h2 class="character-constitution box-outline">Constitution: {{character.class.constitution}}</h2>
+    <h2 class="character-charisma box-outline">Charisma: {{character.class.charisma}}</h2>
     <button class="login-font box-outline update-btn" type="submit">Update
       Character</button>
   </div>
 </div>
 <script src="/js/character.js"></script>
-
-<div id="character-details-template">
+{{!-- <div id="character-details-template">
   <p><strong>ID:</strong> {{character.id}}</p>
   <p><strong>User ID:</strong> {{character.user_id}}</p>
   <p><strong>Class ID:</strong> {{character.class_id}}</p>
@@ -37,4 +38,4 @@
   <p><strong>Class Description:</strong> {{character.class.description}}</p>
   <p><strong>Strength:</strong> {{character.class.strength}}</p>
   <p><strong>Race:</strong> {{character.race.name}}</p>
-</div>
+</div> --}}
