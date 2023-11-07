@@ -257,9 +257,9 @@ img {
   flex-direction: row;
   width: 35%;
   justify-content: flex-end;
-  gap: 60px 400px;
+  gap: 80px 250px;
   margin-top: -500px;
-  margin-left: 1300px;
+  margin-left: 1000px;
 
 }
 .update-btn {
