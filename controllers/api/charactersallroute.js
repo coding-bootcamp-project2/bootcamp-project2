@@ -6,7 +6,7 @@ const {User, Class, Race}=require('../../models')
 // GET: Retrieve a list of all characters
 router.get('/', async (req, res) => { 
   try { console.log ("Retreiving all characters")
-    const charactersData = await Character.findAll({include: [{ model: User }, { model: Class }, { model: Race },{ model: Race }],});
+    const charactersData = await Character.findAll({include: [{ model: User }, { model: Class }, { model: Race }],});
     const characters = charactersData.map((character) =>
     character.get({ plain: true })
     );
