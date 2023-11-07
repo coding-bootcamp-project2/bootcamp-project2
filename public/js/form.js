@@ -9,7 +9,7 @@ let raceId = 1;
 const createCharacter = async (e) => {
   e.preventDefault();
   // Tommy's form needs to pass in class ID and race ID.
-  const raceId = raceDropdown.dataset
+  const raceId = raceDropdown.dataset.id
   const characterName = nameInput.value
   // fetch the class data that matches the class ID
   const response = await fetch(`/api/class/${classId}`);
