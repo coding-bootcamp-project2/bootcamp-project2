@@ -3,12 +3,12 @@
     <header>{{character_name}}</header>
     <div class="character-card">
       <div class="character-card-stats">
-        <p>User: {{user.user_name}}</p>
-        <p>Class: {{class.name}}</p>
-        <p>Race: {{race.name}}</p>
-        <p>Level: {{level}}</p>
-        <p>Hit Points: {{class.hit_points}}</p>
-        <p>Date Created: {{format_time createdAt}}</p>
+        <p><strong>User:</strong> {{user.user_name}}</p>
+        <p><strong>Class:</strong> {{class.name}}</p>
+        <p><strong>Race:</strong> {{race.name}}</p>
+        <p><strong>Level:</strong> {{level}}</p>
+        <p><strong>Hit Points:</strong> {{class.hit_points}}</p>
+        <p><strong>Date Created:</strong> {{format_time createdAt}}</p>
       </div>
       <div>
         <img class="character-card-image" src="{{class.image}}" />
