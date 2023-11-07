@@ -33,7 +33,7 @@ router.post("/create", async (req, res) => {
       ...req.body,
       user_id: req.session.userId,
     });
-    console.log(newCharacter);
+    console.log("New Character------------", newCharacter);
     res.status(200).json(newCharacter);
     // res.render(character, { newCharacter });
   } catch (err) {

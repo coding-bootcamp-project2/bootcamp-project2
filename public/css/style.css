@@ -287,12 +287,10 @@ h2 {
 }
 
 #question-form {
-  position: absolute;
-  top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -332,8 +330,7 @@ button:hover {
 }
 
 #startquiz {
-  position: absolute;
-  top: 440px;
+  position: relative;
   background-color: #008000;
   color: #fff;
   border: none;
@@ -346,6 +343,25 @@ button:hover {
 
 #startquiz:hover {
   background-color: #00ff00;
+}
+
+.question-section {
+  width: 50%;
+  position: absolute;
+  top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  color: var(--light);
+  font-family: "Griffy";
+  font-size: 30px;
+}
+
+.select {
+  width: 100px;
 }
 
 .card-anchor {
