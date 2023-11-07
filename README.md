@@ -31,9 +31,9 @@ The user story and acceptance criteria will depend on the project that you creat
 
 ## Screenshots
 
-![HomePage](<Screenshot 2023-11-07 at 3.38.14 PM.png>) 
+![Login Page](public/asset/login.png)
 
-![Character Creator Page](<Screenshot 2023-11-07 at 3.50.38 PM.png>)
+![Character Quiz Page](<public/asset/character quiz.png>)
 
 ## Deployed Link
 
