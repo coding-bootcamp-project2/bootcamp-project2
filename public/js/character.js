@@ -1,1 +1,1 @@
-const updateCharacter = document.querySelector("")
+// const updateCharacter = document.querySelector("")
