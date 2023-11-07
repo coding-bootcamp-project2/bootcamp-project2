@@ -1,92 +1,23 @@
-<div id="form-container">
-    <form id="question-form">
-        <h2>Multiple-Choice Questionnaire</h2>
+<form id="question-form">
+  <h1>Character Creator</h1>
+  <!-- Question field -->
+  <div id="question" class="hidden"></div>
+  <!-- Answer buttons -->
+  <div class="answers-section hidden">
+    <div id="answer-buttons">
+      <button id="answer1" data-class="1">Answer 1</button>
+      <button id="answer2" data-class="2">Answer 2</button>
+      <button id="answer3" data-class="3">Answer 3</button>
+      <button id="answer4" data-class="4">Answer 4</button>
+      <button id="answer5" data-class="5">Answer 5</button>
+      <button id="answer6" data-class="6">Answer 6</button>
+      <button id="answer7" data-class="7">Answer 7</button>
+      <button id="answer8" data-class="8">Answer 8</button>
+      <button id="answer9" data-class="9">Answer 9</button>
+    </div>
+  </div>
+</form>
+<!-- Start quiz button -->
+<button id="startquiz">Start Quiz</button>
 
-        {{#each questions}}
-        <div class="question">
-            <p>{{this.questionText}}</p>
-            {{#each this.choices}}
-            <label>
-                <input type="radio" name="{{../questionId}}" value="{{@index}}"> {{this}}
-            </label>
-            {{/each}}
-        </div>
-        {{/each}}
-
-        <button type="submit">Submit</button>
-    </form>
-</div>
-
-<div id="form-template" type="text/x-handlebars-template">
-    <form id="question-form">
-        <h2>Multiple-Choice Questionnaire</h2>
-
-        {{#each questions}}
-        <div class="question">
-            <p>{{this.questionText}}</p>
-            {{#each this.choices}}
-            <label>
-                <input type="radio" name="{{../questionId}}" value="{{@index}}"> {{this}}
-            </label>
-            {{/each}}
-        </div>
-        {{/each}}
-
-        <button class="formButton" type="submit">Submit</button>
-        <button class="formButton" type="submit">Submit</button>
-    </form>
-</div>
-
-<script>
-<script>
-    var data = {
-        questions: [
-            {
-                questionId: 1,
-                questionText: "What's your preferred role in a group?",
-                choices: ["Lead the charge and smash things", "Charm and inspire others", "Heal and support your allies", "Connect with nature and transform", "Swear an oath to protect the innocent", "Unleash powerful magic with your will", "Make a pact with a mysterious entity", "Study and manipulate arcane knowledge"]
-            },
-            {
-                questionId: 2,
-                questionText: "Question 2: What is your favorite animal?",
-                choices: ["Dog", "Cat", "Lion", "Elephant", "Dolphin", "Hawk", "Snake", "Tiger", "Horse"]
-            },
-            {
-                questionId: 3,
-                questionText: "Question 3: What is your favorite food?",
-                choices: ["Pizza", "Burger", "Sushi", "Pasta", "Steak", "Tacos", "Salad", "Ice Cream", "Curry"]
-            },
-            {
-                questionId: 4,
-                questionText: "Question 4: What is your favorite movie genre?",
-                choices: ["Action", "Comedy", "Drama", "Horror", "Science Fiction", "Fantasy", "Romance", "Adventure", "Animation"]
-            },
-            {
-                questionId: 5,
-                questionText: "Question 5: What is your favorite season?",
-                choices: ["Spring", "Summer", "Fall", "Winter", "I don't have a favorite season"]
-            },
-            {
-                questionId: 6,
-                questionText: "Question 6: What is your favorite hobby?",
-                choices: ["Reading", "Gaming", "Cooking", "Hiking", "Painting", "Music", "Photography", "Sports", "Other"]
-            }
-        ]
-    };
-
-    // Compile the Handlebars template
-    var source = $("#form-template").html();
-    var template = Handlebars.compile(source);
-
-    var html = template(data);
-
-    $("#form-container").html(html);
-
-    $("#question-form").on("submit", function (event) {
-        event.preventDefault();
-    });
-
-
-</script>
-
-<script src= "/js/form.js"></script>
+<script src="/js/form.js"></script>
