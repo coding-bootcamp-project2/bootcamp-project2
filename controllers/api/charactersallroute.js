@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
       character.get({ plain: true })
     );
     console.log(characters);
-    res.render("charactersall", { characters });
+    res.render("charactersall", { characters, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.error("Error fetching all characters:", err);
     res.status(500).send("Internal Server Error");

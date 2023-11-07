@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 // Create a character page route, render form page
 router.get("/create", async (req, res) => {
   try {
@@ -55,7 +54,7 @@ router.get("/:id", async (req, res) => {
     }
     const character = characterData.get({ plain: true });
     console.log(character);
-    res.render("character", { character });
+    res.render("character", { character, loggedIn: req.session.loggedIn });
     // res.status(200).json(characterData);
   } catch (err) {
     res.status(500).json(err);
