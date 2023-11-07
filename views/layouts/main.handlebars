@@ -23,6 +23,31 @@
     />
   </head>
 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dungeons and Dragons Character</title>
+    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Nosifer&family=Rubik+Iso&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Griffy&family=Nosifer&family=Rubik+Iso&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Eater&family=Griffy&family=Nosifer&family=Rubik+Iso&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
   <body>
     <header>
       <h1>Dungeons and Dragons Character Generator</h1>
@@ -30,8 +55,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/api/character/create">Create Character</a>
-      <a href="/api/character">Your Character</a>
-      <a href="/api/monster">Monsters</a>
+      <a href="/api/charactersall">Your Character</a>
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}

@@ -14,7 +14,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Create a character page route
+
+// Create a character page route, render form page
 router.get("/create", async (req, res) => {
   try {
     res.render("form", {
