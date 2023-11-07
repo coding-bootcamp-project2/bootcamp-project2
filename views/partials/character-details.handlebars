@@ -1,13 +1,18 @@
 <section class="card">
-    <a href="/character/{{id}}">
-        <header>{{character_name}}</header>
+  <a class="card-anchor" href="/api/character/{{id}}">
+    <header>{{character_name}}</header>
+    <div class="character-card">
+      <div class="character-card-stats">
+        <p>User: {{user.user_name}}</p>
         <p>Class: {{class.name}}</p>
         <p>Race: {{race.name}}</p>
         <p>Level: {{level}}</p>
-        <p>Hit Points: {{class.hit_points}}</p> 
-        <p>ID: {{id}}</p>
-        <p>User ID: {{user_id}}</p>
-        <p>Class ID: {{class_id}}</p>
-        <p>Date Created: {{createdAt}}</p>
-    </a>
+        <p>Hit Points: {{class.hit_points}}</p>
+        <p>Date Created: {{format_time createdAt}}</p>
+      </div>
+      <div>
+        <img class="character-card-image" src="{{class.image}}" />
+      </div>
+    </div>
+  </a>
 </section>
