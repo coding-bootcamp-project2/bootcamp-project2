@@ -49,6 +49,7 @@ h1 {
   font-size: 50px;
   text-align: center;
   font-family: "Griffy";
+  color: white;
   /* font-weight: bold; */
 }
 
@@ -214,11 +215,12 @@ img {
   font-weight: bold;
 }
 .character-template {
-  background-color: #000000;
-  background-image: url('../asset/background-image.png');
+  background-image: url("../asset/background-image.png");
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .character-template h2 {
   color: var(--light);
@@ -232,6 +234,7 @@ img {
   background-color: var(--light);
 }
 .character-info {
+  padding: 20px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -244,31 +247,39 @@ img {
   border-radius: 10px;
   padding: 10px;
   height: 50px;
-
 }
 .character-stats {
   display: flex;
+  align-items: center;
   margin-top: 15px;
   justify-content: space-around;
 }
-.character-abilities {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 35%;
-  justify-content: flex-end;
-  gap: 80px 250px;
-  margin-top: -500px;
-  margin-left: 1000px;
 
+h2 {
+  padding: 15px;
 }
+.character-abilities {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.character-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .update-btn {
   color: white;
   cursor: pointer;
   font-size: 100%;
   transition: color 0.1s;
   border: none;
-  background-image: url('../asset/fire.png');
+  background-image: url("../asset/fire.png");
 }
 .update-btn:hover {
   color: var(--primary);
@@ -279,7 +290,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -319,6 +330,7 @@ button:hover {
 }
 
 #startquiz {
+  position: relative;
   background-color: #008000;
   color: #fff;
   border: none;
@@ -331,6 +343,47 @@ button:hover {
 
 #startquiz:hover {
   background-color: #00ff00;
+}
+
+.question-section {
+  width: 50%;
+  position: absolute;
+  top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  color: var(--light);
+  font-family: "Griffy";
+  font-size: 30px;
+}
+
+.select {
+  width: 100px;
+}
+
+.card-anchor {
+  display: flex;
+  flex-direction: column;
+  /* height: 30vh; */
+}
+
+.character-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.character-card-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.character-card-image {
+  height: 50vh;
 }
 
 @media screen and (max-width: 1170px) {
