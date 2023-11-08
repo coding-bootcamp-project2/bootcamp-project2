@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Character = require("../../models/Character"); // Adjust the path as needed
 const { User, Class, Race } = require("../../models");
+const capitalize = require("../../node_modules/lodash/capitalize");
 
 // GET: Retrieve a list of all characters
 router.get("/", async (req, res) => {
@@ -16,9 +17,13 @@ router.get("/", async (req, res) => {
         { model: Race },
       ],
     });
-    const characters = charactersData.map((character) =>
-      character.get({ plain: true })
-    );
+    const characters = charactersData.map((character) => {
+      character = character.get({ plain: true });
+      // console.log(character.race.name);
+      character.class.name = capitalize(character.class.name);
+      character.race.name = capitalize(character.race.name);
+      return character;
+    });
     console.log(characters);
     res.render("charactersall", { characters, loggedIn: req.session.loggedIn });
   } catch (err) {

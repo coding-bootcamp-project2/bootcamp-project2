@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const capitalize = require("../../node_modules/lodash/capitalize");
 
 const { Character, User, Class, Race } = require("../../models");
 
@@ -53,7 +54,8 @@ router.get("/:id", async (req, res) => {
       return;
     }
     const character = characterData.get({ plain: true });
-    console.log(character);
+    character.class.name = capitalize(character.class.name);
+    character.race.name = capitalize(character.race.name);
     res.render("character", { character, loggedIn: req.session.loggedIn });
     // res.status(200).json(characterData);
   } catch (err) {
