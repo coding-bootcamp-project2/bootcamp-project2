@@ -35,9 +35,11 @@ The user story and acceptance criteria will depend on the project that you creat
 
 ![Character Quiz Page](<public/asset/character quiz.png>)
 
-## Deployed Link
+## Deployed Links
 
-[Dungeons and Dragons Character Creator](https://sleepy-meadow-76527-22ff3e4efa2a.herokuapp.com/)
+[Heroku](https://sleepy-meadow-76527-22ff3e4efa2a.herokuapp.com/)
+
+[GitHub](Repohttps://github.com/coding-bootcamp-project2/bootcamp-project2)
 
 ## Installation
 
