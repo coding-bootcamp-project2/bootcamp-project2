@@ -231,7 +231,7 @@ img {
 
 .character-template h2:hover {
   color: var(--secondary);
-  background-color: var(--light);
+  /* background-color: var(--light); */
 }
 .character-info {
   padding: 20px;
@@ -253,6 +253,10 @@ img {
   align-items: center;
   margin-top: 15px;
   justify-content: space-around;
+}
+.character-stats input{
+  height: 45px;
+  width: 60px;
 }
 
 h2 {

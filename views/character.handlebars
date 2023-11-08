@@ -1,7 +1,6 @@
 <!-- Character Template -->
 <div class="character-template">
   <div class="strong character-info">
-    {{!-- <input type ="text" placeholder="{{character.character_name}}"> --}}
     <h2
       id="character-name"
       class="box-outline"
@@ -14,17 +13,31 @@
   </div>
   <div class="character-stats">
     <div class="character-abilities">
-      <h2 class="character-strength box-outline">Strength: {{character.class.strength}}</h2>
-      <h2 class="character-intelligence box-outline">Intelligence: {{character.class.intelligence}}</h2>
-      <h2 class="character-dexterity box-outline">Dexterity: {{character.class.dexterity}}</h2>
+      <h2 class="character-strength box-outline">Strength: {{character.class.strength}}
+        <input id="strength-input" class="box-outline">
+      </h2>
+      <h2 class="character-intelligence box-outline">Intelligence: {{character.class.intelligence}}
+        <input id="intelligence-input" class="box-outline">
+      </h2>
+      <h2 class="character-dexterity box-outline">Dexterity: {{character.class.dexterity}}
+        <input id="dexterity-input" class="box-outline">
+      </h2>
     </div>
     <div class="character-image-section" ><img src="{{character.class.image}}" /> <button class="login-font box-outline update-btn" type="submit">Update
       Character</button></div>
     <div class="character-abilities">
-        <h2 class="character-hp fb box-outline">Hit Points: {{character.class.hit_points}}</h2>
-      <h2 class="character-wisdom box-outline">Wisdom: {{character.class.wisdom}}</h2>
-      <h2 class="character-constitution box-outline">Constitution: {{character.class.constitution}}</h2>
-      <h2 class="character-charisma box-outline">Charisma: {{character.class.charisma}}</h2>
+        <h2 class="character-hp fb box-outline">Hit Points: {{character.class.hit_points}}
+          <input id="hp-input" class="box-outline">
+        </h2>
+      <h2 class="character-wisdom box-outline">Wisdom: {{character.class.wisdom}}
+        <input id="wisdom-input" class="box-outline">
+      </h2>
+      <h2 class="character-constitution box-outline">Constitution: {{character.class.constitution}}
+        <input id="constitution-input" class="box-outline">
+      </h2>
+      <h2 class="character-charisma box-outline">Charisma: {{character.class.charisma}}
+        <input id="charisma-input" class="box-outline">
+      </h2>
    </div>
   </div>
 
