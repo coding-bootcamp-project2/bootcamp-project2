@@ -217,6 +217,7 @@ startQuizButton.addEventListener("click", function (event) {
   showQuestion();
   startQuizButton.classList.add("hidden");
   questionDiv.classList.remove("hidden");
+  questionDiv.classList.add("question-display");
   answersSection.classList.remove("hidden");
 });
 
