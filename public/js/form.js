@@ -1,7 +1,7 @@
 const characterForm = document.querySelector("#question-form");
 const answersSection = document.querySelector(".answers-section");
-const characterNameInput = document.querySelector("#name");
-const race = document.querySelector("#race");
+let classId;
+let raceId = 1;
 
 const createCharacter = async (e) => {
   e.preventDefault();
@@ -9,14 +9,12 @@ const createCharacter = async (e) => {
   // fetch the class data that matches the class ID
   const response = await fetch(`/api/class/${classId}`);
   const classData = await response.json();
-  const raceId = race.value;
-  const characterName = characterNameInput.value;
 
   // if the class data is found, then create the character
   if (response.ok) {
     console.log(classData);
     const character = {
-      character_name: characterName,
+      character_name: "David",
       class_id: classId,
       race_id: raceId,
       level: 1,

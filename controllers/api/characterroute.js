@@ -66,7 +66,8 @@ router.get("/:id", async (req, res) => {
 // Update a character
 router.put("/:id", async (req, res) => {
   try {
-    const [affectedRows] = await Character.update(req.body, {
+    console.log('working')
+    const [affectedRows] = await Character.update({}, {
       where: {
         id: req.params.id,
       },

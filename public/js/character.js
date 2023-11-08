@@ -20,8 +20,9 @@ const updateBtn = document.querySelector(".update-btn");
 
 const updateCharacter = async (data) => {
   data.preventDefault();
+  const characterId = document.querySelector(".character-info").dataset.id
   const updatedChracterData = {
-    id: characterID,
+    id: characterId,
     newHP: charHpInputEl.value,
     newStr: charStrInputEl.value,
     newInt: charIntInputEl.value,
@@ -31,20 +32,20 @@ const updateCharacter = async (data) => {
     newCha: charChaInputEl.value,
   };
   try {
-    const response = await fetch("/api/character/:id", {
+    const response = await fetch(`/api/character/${characterId}`, {
       method: "PUT",
       body: JSON.stringify(updatedChracterData),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok){
         console.log(response);
-        const newCharacter = await response.json();
-        const newCharacterId = newCharacter.id;
-        document.location.replace(`/api/character/${newCharacterId}`);
-    }
+        document.location.replace(`/api/character/${characterId}`);
+    }else {
+        alert("Failed to update character.");
+      }
   } catch(err) {
-    res.status(500).json(err)
+    console.log(err)
   }
 };
 
-updateBtn.addEventListener("submit", updateCharacter);
+updateBtn.addEventListener("click", updateCharacter);
