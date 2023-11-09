@@ -1,13 +1,11 @@
 <img src="/asset/dragon_art.jpg" class="background" />
-<div class="question-section">
+<div class="magiccard">
   <form id="question-form">
-    <h1>Character Creator</h1>
-    <!-- Name Input -->
+    <h2>Character Creator</h2>
     <div id="nameInput">
       <label class="input" for="name">Character Name:</label>
+      <input class="input" type="text" id="name" required />
     </div>
-    <input type="text" id="name" name="name" required />
-    <!-- Race Dropdown -->
     <div id="raceDropdown">
       <label class="input" for="race">Select your character's race:</label>
       <select class="select" id="race" name="race">
@@ -20,9 +18,7 @@
         <!-- Add more race options as needed -->
       </select>
     </div>
-    <!-- Question field -->
     <div id="question" class="hidden"></div>
-    <!-- Answer buttons -->
     <div class="answers-section hidden">
       <div id="answer-buttons">
         <button id="answer1" data-class="1">Answer 1</button>
@@ -36,9 +32,9 @@
         <button id="answer9" data-class="9">Answer 9</button>
       </div>
     </div>
+    <button id="startquiz">Start Quiz</button>
   </form>
-  <!-- Start quiz button -->
-  <button id="startquiz">Start Quiz</button>
+
 </div>
 
 <script src="/js/form.js"></script>

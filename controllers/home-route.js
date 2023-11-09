@@ -12,6 +12,17 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/card", async (req, res) => {
+  try {
+    res.render("card", {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId,
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 // login route for the landing page
 router.get("/login", async (req, res) => {
   try {
