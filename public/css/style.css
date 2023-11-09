@@ -372,11 +372,11 @@ button:hover {
   width: calc(var(--card-height) / 2);
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
 }
 
 #raceDropdown {
-  padding: 10px;
+  padding: 5px;
 }
 
 .select {
@@ -429,7 +429,7 @@ button:hover {
 }
 
 :root {
-  --card-height: 65vh;
+  --card-height: 70vh;
   --card-width: calc(var(--card-height) / 1.5);
 }
 
@@ -652,12 +652,11 @@ button:hover {
 
   #question {
     width: 250px;
-    margin: 5px;
     padding: 5px;
   }
 
   :root {
-    --card-height: 70vh;
+    --card-height: 75vh;
     --card-width: calc(var(--card-height) / 2);
   }
 
