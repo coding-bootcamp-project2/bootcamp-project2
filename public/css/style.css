@@ -87,6 +87,7 @@ nav a:hover {
 .post {
   flex: 4;
   background-color: #fff;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,6 +201,7 @@ img {
 }
 
 .background {
+  z-index: -2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,7 +217,8 @@ img {
   font-weight: bold;
 }
 .character-template {
-  background-image: url("../asset/background-image.png");
+  position: absolute;
+  top: 250px;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -256,8 +259,12 @@ img {
 }
 
 h2 {
-  padding: 15px;
+  padding: 0px;
+  color: var(--light);
+  font-family: "Griffy";
+  font-size: 30px;
 }
+
 .character-abilities {
   flex: 1;
   display: flex;
@@ -292,16 +299,19 @@ h2 {
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
+  /* z-index: 2; */
 }
 
 #question {
   background-color: #333;
   border: 2px solid #444;
   border-radius: 5px;
-  width: 400px;
+  width: 300px;
   color: white;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 15px;
+  /* font-family: "Griffy"; */
 }
 
 .question-display {
@@ -315,6 +325,8 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 15px;
+  /* font-family: "Griffy"; */
 }
 
 button {
@@ -323,7 +335,7 @@ button {
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -342,28 +354,33 @@ button:hover {
   margin-top: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: "Griffy";
 }
 
 #startquiz:hover {
   background-color: #00ff00;
 }
 
-.question-section {
-  width: 50%;
-  position: absolute;
-  top: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .input {
   color: var(--light);
   font-family: "Griffy";
-  font-size: 30px;
+  font-size: 20px;
+  /* z-index: auto; */
+}
+
+#nameInput {
+  width: calc(var(--card-height) / 2);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#raceDropdown {
+  padding: 5px;
 }
 
 .select {
+  font-size: 15px;
   width: 100px;
 }
 
@@ -378,6 +395,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-around;
   height: 100%;
+  z-index: 1;
 }
 
 .character-card-stats {
@@ -385,8 +403,223 @@ button:hover {
   flex-direction: column;
   justify-content: space-around;
 }
+
 .character-card-image {
   height: 50vh;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 70%;
+}
+
+.btn-no-style {
+  padding: 20px 14px;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 70vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.magiccard {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: absolute;
+  top: 300px;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.magiccard::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #ffb65d,
+    #e33c3c 43%,
+    #0e0221
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.magiccard::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.magiccard2 {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: absolute;
+  top: 100px;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.magiccard2::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #ffb65d,
+    #e33c3c 43%,
+    #0e0221
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.magiccard2::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.magiccard3 {
+  background: #191c29;
+  /* width: 40vw; */
+  /* height: 40vh; */
+  padding: 3px;
+  margin: 5px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.magiccard3::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.magiccard3::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }
 
 @media screen and (max-width: 1170px) {
@@ -397,17 +630,76 @@ button:hover {
     /* font-weight: bold; */
   }
 
-  .background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    object-position: 70%;
+  h2 {
+    font-size: 20px;
+    margin: 0;
   }
 
-  .btn-no-style {
-    padding: 20px 14px;
+  #nameInput {
+    width: calc(var(--card-height) / 3);
+    padding: 5px;
+  }
+
+  .input {
+    font-size: 15px;
+    margin: 5px;
+    /* z-index: auto; */
+  }
+
+  #raceDropdown {
+    padding: 5px;
+  }
+
+  #question {
+    width: 250px;
+    padding: 5px;
+  }
+
+  :root {
+    --card-height: 75vh;
+    --card-width: calc(var(--card-height) / 2);
+  }
+
+  .character-template h2 {
+    color: var(--light);
+    font-family: "Griffy";
+    /* background-image: url('../asset/bb1.png'); */
+    font-size: 1em;
+  }
+  .magiccard2 {
+    top: 200px;
+  }
+
+  .character-stats {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .character-abilities {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-grow: grow;
+  }
+  .character-info {
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .character-image {
+    float: right;
+    width: 49%;
+    text-align: center;
+  }
+
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .character-card-stats p {
+    margin: 0;
   }
 }
