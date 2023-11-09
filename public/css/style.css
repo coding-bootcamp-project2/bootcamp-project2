@@ -149,8 +149,6 @@ img {
   border-width: thick;
   background-image: linear-gradient(rgb(16, 15, 15), rgb(243, 6, 6));
   color: var(--light);
-  display: flex;
-  flex-direction: column;
 }
 
 .card header {
@@ -545,6 +543,22 @@ button:hover {
   :root {
     --card-height: 70vh;
     --card-width: calc(var(--card-height) / 2);
+  }
+
+  .character-stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .character-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .character-image {
+    float: right;
+    width: 49%;
+    text-align: center;
   }
 }
 
