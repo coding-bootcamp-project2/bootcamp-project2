@@ -7,6 +7,9 @@ const capitalize = require("../../node_modules/lodash/capitalize");
 // GET: Retrieve a list of all characters
 router.get("/", async (req, res) => {
   try {
+    if (!req.session.loggedIn) {
+      return res.render("login");
+    }
     console.log("Retreiving all characters");
     const charactersData = await Character.findAll({
       where: { user_id: req.session.userId },
