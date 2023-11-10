@@ -311,7 +311,6 @@ h2 {
   padding: 10px;
   margin: 10px 0;
   font-size: 15px;
-  /* font-family: "Griffy"; */
 }
 
 .question-display {
@@ -326,7 +325,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   font-size: 15px;
-  /* font-family: "Griffy"; */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 button {
@@ -641,6 +640,7 @@ button:hover {
   }
 
   .input {
+    width: calc(var(--card-height) / 3);
     font-size: 15px;
     margin: 5px;
     /* z-index: auto; */
@@ -653,10 +653,11 @@ button:hover {
   #question {
     width: 250px;
     padding: 5px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 
   :root {
-    --card-height: 75vh;
+    --card-height: 80vh;
     --card-width: calc(var(--card-height) / 2);
   }
 
