@@ -657,7 +657,7 @@ button:hover {
   }
 
   :root {
-    --card-height: 100vh;
+    --card-height: 90vh;
     --card-width: calc(var(--card-height) / 2);
   }
 
