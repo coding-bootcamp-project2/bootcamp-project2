@@ -666,9 +666,12 @@ button:hover {
     font-family: "Griffy";
     /* background-image: url('../asset/bb1.png'); */
     font-size: 1em;
+    padding: 10px;
   }
   .magiccard2 {
     top: 200px;
+    height: 50vh;
+    width: 60vw;
   }
 
   .character-stats {
