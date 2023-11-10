@@ -621,7 +621,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 390vw) {
+@media screen and (max-width: 1180px) {
   h1 {
     font-size: 30px;
     text-align: center;
